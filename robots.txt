@@ -1,0 +1,8 @@
+# Athlomed
+User-agent: *
+Allow: /
+Disallow: /checkout/
+Disallow: /legal/consent/medical
+Disallow: /_archive/
+
+Sitemap: https://athlomedonline.com/sitemap.xml

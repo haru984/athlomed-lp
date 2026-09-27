@@ -1,0 +1,254 @@
+# Athlomed LP — Netlify 設定
+# ビルド不要の静的サイト。publish はこのフォルダ自身。
+
+[build]
+  publish = "."
+  command = ""
+
+# ---- クリーンURL（200 書き換え）----
+[[redirects]]
+  from = "/legal/v2/terms"
+  to = "/legal/v2/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/terms-en"
+  to = "/legal/v2/terms-en.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/privacy"
+  to = "/legal/v2/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/privacy-en"
+  to = "/legal/v2/privacy-en.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/athlete-consent"
+  to = "/legal/v2/athlete-consent.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/athlete-consent-en"
+  to = "/legal/v2/athlete-consent-en.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/guardian-consent"
+  to = "/legal/v2/guardian-consent.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/guardian-consent-en"
+  to = "/legal/v2/guardian-consent-en.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/third-party-consent"
+  to = "/legal/v2/third-party-consent.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/v2/third-party-consent-en"
+  to = "/legal/v2/third-party-consent-en.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/checkout/confirm"
+  to = "/checkout/confirm.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/terms"
+  to = "/legal/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/privacy"
+  to = "/legal/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/tokushoho"
+  to = "/legal/tokushoho.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/security"
+  to = "/legal/security.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/consent/athlete"
+  to = "/legal/consent/athlete.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/consent/guardian"
+  to = "/legal/consent/guardian.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal/consent/medical"
+  to = "/legal/consent/medical.html"
+  status = 200
+
+# ---- .html 付きURLはクリーンURLへ301（重複コンテンツ回避）----
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout/confirm.html"
+  to = "/checkout/confirm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/:doc.html"
+  to = "/legal/:doc"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/consent/:doc.html"
+  to = "/legal/consent/:doc"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# ---- 旧URL → 新URL（2026-08-16 の法務文書 v1.1 で再編）----
+[[redirects]]
+  from = "/terms"
+  to = "/legal/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/legal/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "/legal/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/legal/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal"
+  to = "/legal/tokushoho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal.html"
+  to = "/legal/tokushoho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout"
+  to = "/checkout/confirm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout.html"
+  to = "/checkout/confirm"
+  status = 301
+  force = true
+
+# 旧・全世界対応版（英語版 / DPA）は日本国内先行の方針により提供を停止し、
+# 対応する日本語の現行文書へ転送する。ファイルは _archive/ に保管。
+[[redirects]]
+  from = "/dpa"
+  to = "/legal/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dpa.html"
+  to = "/legal/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-en"
+  to = "/legal/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-en"
+  to = "/legal/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dpa-en"
+  to = "/legal/security"
+  status = 301
+  force = true
+
+# ---- www → apex ----
+[[redirects]]
+  from = "https://www.athlomedonline.com/*"
+  to = "https://athlomedonline.com/:splat"
+  status = 301
+  force = true
+
+# ---- セキュリティヘッダー ----
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action https://formspree.io; frame-ancestors 'self'; base-uri 'self'"
+
+# ---- キャッシュ ----
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# アーカイブは配信しない
+[[headers]]
+  for = "/_archive/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

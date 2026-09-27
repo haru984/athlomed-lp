@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athlomed | Pro Plan お申し込み内容の確認</title>
+<meta name="description" content="Athlomed Pro Planのお申し込み内容の確認画面です。料金、請求頻度、自動更新、解約方法、返金の取扱いをご確認いただけます。">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/legal.css">
+<style>
+.co-wrap{max-width:640px;margin:0 auto;padding:48px 24px 96px}
+.co-card{border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:0 24px 50px -34px rgba(15,23,42,.35);overflow:hidden}
+.co-head{padding:24px 26px;border-bottom:1px solid var(--border);background:#F7FAFE}
+.co-head .plan{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--primary);margin:0 0 8px}
+.co-head h2{margin:0;font-size:20px;font-weight:700}
+.co-head p{margin:8px 0 0;font-size:13px;line-height:1.8;color:var(--muted)}
+.co-price{display:flex;align-items:baseline;gap:10px;padding:22px 26px;border-bottom:1px solid var(--border)}
+.co-price .amount{font-family:"Roboto Mono",monospace;font-size:32px;font-weight:500;line-height:1}
+.co-price .per{font-size:13px;color:var(--muted)}
+.co-rows{padding:6px 26px 8px}
+.co-row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #F1F5F9;font-size:13.5px;line-height:1.9}
+.co-row:last-child{border-bottom:0}
+.co-row dt{flex:none;width:8.5rem;color:var(--muted);margin:0}
+.co-row dd{margin:0;flex:1;color:#334155}
+.co-row dd strong{color:var(--fg)}
+@media (max-width:520px){.co-row{flex-direction:column;gap:4px}.co-row dt{width:auto;font-size:12px}}
+.co-foot{padding:22px 26px 26px;border-top:1px solid var(--border);background:#F7FAFE;display:flex;flex-direction:column;gap:16px}
+.co-consent{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;line-height:1.8;color:#334155;cursor:pointer}
+.co-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--primary);cursor:pointer}
+.co-btn{width:100%;background:var(--primary);color:#fff;font-family:inherit;font-size:15px;font-weight:700;padding:16px;border:none;border-radius:10px;cursor:pointer;min-height:52px;box-shadow:0 6px 20px -6px rgba(37,99,235,.55)}
+.co-btn:hover:not([disabled]){background:var(--primary-dark)}
+.co-btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none}
+.co-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px}
+.co-devnote{margin:22px auto 0;max-width:640px;border:1px dashed #CBD5E1;border-radius:10px;padding:14px 16px;font-size:12px;line-height:1.8;color:var(--muted)}
+.co-region{display:flex;gap:6px;margin:0 0 20px}
+.co-region button{flex:1;font-family:inherit;font-size:13px;font-weight:700;padding:11px;border-radius:9px;border:1px solid var(--border);background:#fff;color:#334155;cursor:pointer}
+.co-region button[aria-pressed="true"]{background:var(--fg);color:#fff;border-color:var(--fg)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="lg-header">
+  <div class="inner">
+    <a class="lg-brand" href="/"><img src="assets/images/athlome-mark-96.png" alt="" width="28" height="28" decoding="async">Athlomed</a>
+    <a class="lg-back" href="/#pricing">料金プランへ戻る</a>
+  </div>
+</header>
+
+<div class="lg-hero">
+  <div class="inner" style="padding-bottom:36px">
+    <nav class="lg-crumb" aria-label="パンくずリスト"><a href="/">ホーム</a><span>/</span><a href="/#pricing">料金プラン</a><span>/</span>お申し込み内容の確認</nav>
+    <h1 style="font-size:32px">お申し込み内容の確認</h1>
+    <p class="desc" style="margin-top:16px">お支払いに進む前に、契約内容をご確認ください。決済はStripeの画面で行われます。</p>
+  </div>
+</div>
+
+<main class="co-wrap" id="main">
+  <div class="co-region" role="group" aria-label="提供地域">
+    <button type="button" id="region-jp" aria-pressed="true">日本</button>
+    <button type="button" id="region-intl" aria-pressed="false">日本国外</button>
+  </div>
+
+  <div class="co-card">
+    <div class="co-head">
+      <p class="plan">SUBSCRIPTION</p>
+      <h2>Athlomed Pro Plan</h2>
+      <p>複数チームを担当するメディカルスタッフ向けの有料プランです。</p>
+    </div>
+    <div class="co-price">
+      <span class="amount" id="co-amount">¥3,980</span>
+      <span class="per">／ 月・1名</span>
+    </div>
+    <dl class="co-rows">
+      <div class="co-row"><dt>請求頻度</dt><dd>1か月ごと</dd></div>
+      <div class="co-row"><dt>自動更新</dt><dd><strong>あり。</strong>解約手続が行われない限り、契約期間の満了日をもって1か月単位で自動的に更新されます。</dd></div>
+      <div class="co-row"><dt>初回請求</dt><dd>お申し込み時にご請求します。</dd></div>
+      <div class="co-row"><dt>次回請求</dt><dd id="co-next">次回更新日にご請求します（更新日は決済完了後に表示されます）。</dd></div>
+      <div class="co-row"><dt>お支払方法</dt><dd>Stripeによるオンライン決済。カード情報は当方では保有しません。</dd></div>
+      <div class="co-row"><dt>解約方法</dt><dd>Webアプリの設定画面からいつでも解約手続ができます。</dd></div>
+      <div class="co-row"><dt>解約時期</dt><dd><strong>解約は即時ではなく、次回更新の停止です。</strong>解約手続後も契約期間の満了日までPro Planをご利用いただけます。次回の更新および請求は発生しません。</dd></div>
+      <div class="co-row"><dt>返金</dt><dd><strong>契約期間途中で解約された場合でも、当該契約期間の利用料金の返金（日割り・月割りを含む）は行いません。</strong></dd></div>
+      <div class="co-row"><dt>提供開始</dt><dd>決済および契約手続の完了後、直ちにご利用いただけます。</dd></div>
+    </dl>
+    <div class="co-foot">
+      <label class="co-consent" for="co-consent">
+        <input id="co-consent" type="checkbox">
+        <span><a href="/legal/terms">利用規約</a>、<a href="/legal/privacy">プライバシーポリシー</a>および<a href="/legal/tokushoho">特定商取引法に基づく表記</a>の内容に同意し、上記の自動更新・返金条件を理解しました</span>
+      </label>
+      <button class="co-btn" id="co-submit" type="button" disabled>お支払いに進む</button>
+      <div class="co-links">
+        <a href="/legal/terms">利用規約</a>
+        <a href="/legal/privacy">プライバシーポリシー</a>
+        <a href="/legal/tokushoho">特定商取引法に基づく表記</a>
+        <a href="/contact">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="co-devnote">この画面は契約導線のUI設計です。決済処理（Stripe）および認証は未接続で、ボタンを押しても課金は発生しません。</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var jp = document.getElementById("region-jp");
+  var intl = document.getElementById("region-intl");
+  var amount = document.getElementById("co-amount");
+  var per = document.querySelector(".co-price .per");
+  function setRegion(isJp) {
+    jp.setAttribute("aria-pressed", isJp ? "true" : "false");
+    intl.setAttribute("aria-pressed", isJp ? "false" : "true");
+    amount.textContent = isJp ? "¥3,980" : "¥3,980";
+    per.textContent = isJp ? "／ 月・1名" : "/ month, per person";
+  }
+  jp.addEventListener("click", function () { setRegion(true); });
+  intl.addEventListener("click", function () { setRegion(false); });
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    if (tz && tz !== "Asia/Tokyo") setRegion(false);
+  } catch (e) {}
+
+  var consent = document.getElementById("co-consent");
+  var submit = document.getElementById("co-submit");
+  consent.addEventListener("change", function () { submit.disabled = !consent.checked; });
+  submit.addEventListener("click", function () {
+    window.alert("決済（Stripe）は未接続です。実装後、ここからStripeのお支払い画面へ遷移します。");
+  });
+})();
+</script>
+
+<footer style="background:#0F172A;color:#94A3B8;padding:48px 24px 32px">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start">
+    <p style="margin:0;font-size:12.5px;line-height:1.9;color:#64748B">運営：太田 陽登（個人事業主）<br><a href="mailto:Athlomed.app@gmail.com" style="color:#94A3B8">Athlomed.app@gmail.com</a></p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13px">
+      <a href="/" style="color:#94A3B8">トップページ</a>
+      <a href="/legal/terms" style="color:#94A3B8">利用規約</a>
+      <a href="/legal/privacy" style="color:#94A3B8">プライバシーポリシー</a>
+      <a href="/legal/tokushoho" style="color:#94A3B8">特定商取引法に基づく表記</a>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#64748B">© 2026 Athlomed（運営：太田 陽登）</div>
+</footer>
+</body>
+</html>

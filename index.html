@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athlomed | スポーツ現場のデータを、ひとつに。</title>
+<meta name="description" content="Athlomedは、スポーツ現場の選手コンディション、傷害、リハビリ、測定データなどを一元管理するためのSaaSです。">
+<link rel="canonical" href="https://athlomedonline.com/">
+<meta name="theme-color" content="#0F172A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Athlomed">
+<meta property="og:title" content="Athlomed | スポーツ現場のデータを、ひとつに。">
+<meta property="og:description" content="Athlomedは、スポーツ現場の選手コンディション、傷害、リハビリ、測定データなどを一元管理するためのSaaSです。">
+<meta property="og:url" content="https://athlomedonline.com/">
+<meta property="og:image" content="https://athlomedonline.com/assets/images/athlome-og.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Athlomed | スポーツ現場のデータを、ひとつに。">
+<meta name="twitter:description" content="Athlomedは、スポーツ現場の選手コンディション、傷害、リハビリ、測定データなどを一元管理するためのSaaSです。">
+<meta name="twitter:image" content="https://athlomedonline.com/assets/images/athlome-og.png">
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0F172A">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0F172A"/>
+    <circle cx="600" cy="360" r="150" fill="none" stroke="#2563EB" stroke-width="14"/>
+    <circle cx="600" cy="210" r="34" fill="#7DD3FC"/>
+    <circle cx="600" cy="510" r="34" fill="#7DD3FC"/>
+    <circle cx="450" cy="360" r="34" fill="#2563EB"/>
+    <circle cx="750" cy="360" r="34" fill="#2563EB"/>
+    <rect x="580" y="270" width="40" height="180" rx="20" fill="#FFFFFF"/>
+    <text x="600" y="650" fill="#FFFFFF" font-family="sans-serif" font-size="72" font-weight="700" text-anchor="middle">Athlomed</text>
+  </svg>
+</template>
+<div style="width:100%;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid #E2EBF6">
+  <div data-pad style="max-width:1200px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#0F172A" aria-label="Athlomed ホーム">
+      <img src="assets/images/athlome-mark-96.png" fetchpriority="high" width="64" height="64" decoding="async" alt="Athlomed" style="width:32px;height:32px;object-fit:contain;display:block">
+      <span style="font-weight:700;font-size:19px;letter-spacing:-.01em">Athlomed</span>
+    </a>
+    <nav data-desk aria-label="メインナビゲーション" style="display:flex;align-items:center;gap:28px">
+      <a href="#problem" style="color:#334155;font-size:14px;font-weight:500">課題</a>
+      <a href="#product" style="color:#334155;font-size:14px;font-weight:500">機能</a>
+      <a href="#connect" style="color:#334155;font-size:14px;font-weight:500">データ連携</a>
+      <a href="#accounts" style="color:#334155;font-size:14px;font-weight:500">アカウント</a>
+      <a href="#why" style="color:#334155;font-size:14px;font-weight:500">選ばれる理由</a>
+      <a href="#pricing" style="color:#334155;font-size:14px;font-weight:500">料金</a>
+      <a href="#faq" style="color:#334155;font-size:14px;font-weight:500">FAQ</a>
+    </nav>
+    <div data-desk style="display:flex;align-items:center;gap:12px">
+      <button type="button" data-lang-toggle="1" aria-label="Switch language" style="cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:700;color:#334155" data-hv="hv1">
+        <span style="color:#2563EB">JA</span><span style="color:#CBD5E1;font-weight:400">/</span><span style="color:#94A3B8">EN</span>
+      </button>
+      <a href="#cta" style="color:#334155;font-size:14px;font-weight:600;padding:10px 14px;border-radius:8px" data-hv="hv1">ログイン</a>
+      <a href="#cta" style="background:#2563EB;color:#fff;font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;box-shadow:0 1px 2px rgba(37,99,235,.35)" data-hv="hv2">ウェイティングリスト</a>
+    </div>
+    <button data-mob type="button" data-lang-toggle="1" aria-label="Switch language" style="display:none;align-items:center;justify-content:center;margin-left:auto;width:auto;height:44px;padding:0 12px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;color:#334155;gap:5px">
+      <span style="color:#2563EB">JA</span><span style="color:#CBD5E1;font-weight:400">/</span><span style="color:#94A3B8">EN</span>
+    </button>
+    <button data-mob type="button" id="menu-toggle" aria-label="メニューを開く" aria-expanded="false" style="display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;cursor:pointer;flex-direction:column;gap:5px">
+      <span style="width:18px;height:2px;background:#0F172A;border-radius:2px;display:block"></span>
+      <span style="width:18px;height:2px;background:#0F172A;border-radius:2px;display:block"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" hidden>
+    <div style="border-top:1px solid #E2EBF6;background:#fff;padding:16px 20px 24px;display:flex;flex-direction:column;gap:4px">
+      <a href="#problem" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">課題</a>
+      <a href="#product" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">機能</a>
+      <a href="#connect" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">データ連携</a>
+      <a href="#accounts" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">アカウント</a>
+      <a href="#why" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">選ばれる理由</a>
+      <a href="#pricing" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">料金</a>
+      <a href="#faq" data-menu-close="1" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">FAQ</a>
+      <a href="#cta" data-menu-close="1" style="margin-top:16px;background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:15px;border-radius:8px;text-align:center">ウェイティングリストに登録</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section data-secpad data-pad style="position:relative;padding:96px 32px 0;background:linear-gradient(180deg,#F0F7FF 0%,#F7FBFF 55%,#FFFFFF 100%);border-bottom:1px solid #E2EBF6;overflow:hidden">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid #DBE7F8;background:#fff;border-radius:999px;font-size:12.5px;font-weight:500;color:#334155;margin-bottom:28px">
+      <span style="width:6px;height:6px;border-radius:50%;background:#0EA5E9;animation:pulseDot 2.4s ease-in-out infinite;display:block"></span>
+      Athlete Life Log Platform — 提供準備中
+    </div>
+    <h1 data-hero-h1 style="margin:0;font-size:66px;line-height:1.18;font-weight:900;letter-spacing:-.035em;color:#0F172A;text-wrap:balance">選手のすべてを、<br>ひとつにつなぐ。</h1>
+    <p style="margin:26px auto 0;max-width:640px;font-size:17px;line-height:1.9;color:#334155;text-wrap:pretty">SOAP、測定、傷害、リハビリ、コンディション。<br>スポーツ現場に分散する選手データを、ひとつのプラットフォームへ。</p>
+    <div style="margin-top:38px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="#cta" style="background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:16px 30px;border-radius:10px;white-space:nowrap;box-shadow:0 6px 20px -6px rgba(37,99,235,.55)" data-hv="hv3">ウェイティングリストに登録</a>
+      <a href="#product" style="background:#fff;color:#0F172A;font-size:15px;font-weight:700;padding:16px 26px;border-radius:10px;white-space:nowrap;border:1px solid #D8E4F5" data-hv="hv4">Athlomedを見る</a>
+    </div>
+    <p style="margin:20px 0 0;font-size:12.5px;color:#64748B">提供準備中 ・ ご登録は無料、順番にご案内します</p>
+  </div>
+
+  <div style="max-width:1160px;margin:60px auto 0;padding-bottom:96px;animation:heroIn 1s cubic-bezier(.16,1,.3,1) both .15s">
+    <div style="border-radius:16px;border:1px solid #DBE7F8;background:#fff;box-shadow:0 40px 80px -40px rgba(15,23,42,.35),0 2px 8px rgba(15,23,42,.06);overflow:hidden">
+      <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #EEF3FA;background:#FBFDFF">
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="margin-left:12px;font-family:'Roboto Mono',monospace;font-size:11.5px;color:#94A3B8">app.athlomedonline.com/dashboard</span>
+      </div>
+      <div data-mock-body style="display:flex;min-height:520px;background:#F7FAFE">
+        <aside data-desk style="width:200px;flex:none;background:#0F172A;padding:18px 12px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:9px;padding:6px 8px 20px">
+            <img src="assets/images/athlome-mark-96.png" loading="lazy" width="64" height="64" decoding="async" alt="" style="width:22px;height:22px;object-fit:contain;display:block;filter:brightness(1.35)">
+            <span style="color:#fff;font-weight:700;font-size:14px">Athlomed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;background:#2563EB;color:#fff;font-size:12.5px;font-weight:500">ダッシュボード</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">選手</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">チーム</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">SOAP</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">測定</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">傷害</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">リハビリ</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">コンディション</div>
+          <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:10px 8px;border-top:1px solid rgba(255,255,255,.08)">
+            <span style="width:26px;height:26px;border-radius:50%;background:#334155;display:block"></span>
+            <span style="color:#E2E8F0;font-size:12px">山田 太郎 <span style="color:#64748B">AT</span></span>
+          </div>
+        </aside>
+        <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <span style="font-size:14px;font-weight:700;color:#0F172A">ダッシュボード</span>
+            <div style="display:flex;gap:8px">
+              <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:7px 11px">2026/08/01 - 2026/08/08</span>
+              <span style="font-size:11px;color:#334155;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:7px 11px">カスタマイズ</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">選手数</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">28</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+2 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">SOAP記録</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">18</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+5 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">測定記録</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">42</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+8 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">傷害中の選手</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">5</div>
+              <div style="font-size:10.5px;color:#991B1B;margin-top:6px">+1 今週</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                <span style="font-size:12.5px;font-weight:700;color:#0F172A">コンディションアラート</span>
+                <span style="font-size:10.5px;color:#991B1B;background:#FEE2E2;border-radius:999px;padding:3px 9px">5件</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">鈴木 大輝</span>
+                  <span style="font-size:10px;color:#991B1B;background:#FEE2E2;border-radius:5px;padding:3px 7px">コンディション低下</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">田中 翔太</span>
+                  <span style="font-size:10px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 7px">疲労蓄積</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">佐藤 陸</span>
+                  <span style="font-size:10px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 7px">睡眠不足</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">髙橋 悠斗</span>
+                  <span style="font-size:10px;color:#991B1B;background:#FEE2E2;border-radius:5px;padding:3px 7px">痛みの訴え</span>
+                </div>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">最近のSOAP記録</div>
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/08</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">鈴木 大輝 — 右足関節捻挫</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/08</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">田中 翔太 — 腰部違和感</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/07</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">佐藤 陸 — 練習後ケア</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/07</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">渡辺 海斗 — 復帰後評価</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">今週の測定実施状況</div>
+              <div style="display:flex;align-items:center;gap:16px">
+                <div style="width:84px;height:84px;border-radius:50%;flex:none;background:conic-gradient(#2563EB 0 75%,#E8F0FC 75% 100%);display:flex;align-items:center;justify-content:center">
+                  <div style="width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Roboto Mono',monospace;font-size:15px;font-weight:500;color:#0F172A">75%</div>
+                </div>
+                <div style="font-size:11.5px;color:#64748B;line-height:2">21 / 28 名が実施済み<br><span style="color:#0F172A">未実施 7 名</span></div>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">傷害ステータス</div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:block"></span>治療中<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">5</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#0EA5E9;display:block"></span>リハビリ中<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">3</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#A5B4FC;display:block"></span>経過観察<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">2</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#86EFAC;display:block"></span>復帰済み<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">18</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin:22px 0 0;text-align:center;font-size:12px;color:#94A3B8">※ 画面はプロトタイプのイメージです</p>
+  </div>
+</section>
+
+<section data-secpad data-pad style="padding:56px 32px;border-bottom:1px solid #E2EBF6;background:#fff">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px">
+    <span style="font-size:12px;color:#94A3B8;font-weight:500;letter-spacing:.06em">FOR</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">アスレティックトレーナー</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">理学療法士</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">S&amp;Cコーチ</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">スポーツドクター</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">柔道整復師</span>
+  </div>
+</section>
+
+<section id="problem" data-secpad data-pad style="padding:120px 32px;background:#F7FAFE;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:680px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">PROBLEM</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.4;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">選手の情報は、現場の<br>あちこちに散らばっている。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">紙のカルテ、Excel、チャット、担当者の記憶。記録は残っていても、必要なときに、必要な形で取り出せません。</p>
+    </div>
+    <div data-reveal style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">01</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">情報が複数の場所に分散する</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">紙・Excel・チャット・個人のメモ。同じ選手の情報が、別々の場所に別々の形式で残る。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">02</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">過去の記録を探すのに時間がかかる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">「去年の同じ部位の受傷はいつだったか」を、その場で確認できない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">03</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">記録と測定がつながらない</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">カルテとROM・筋力の測定値が別管理で、経過を並べて判断できない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">04</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">傷害とリハビリが分断される</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">受傷からRTPまでの経過が一本の線にならず、判断の根拠が残らない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">05</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">担当者が変わると引き継げない</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">スタッフの異動・卒業とともに、蓄積された文脈が失われる。</p>
+      </div>
+      <div style="background:#0F172A;border:1px solid #0F172A;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.7;margin-bottom:10px">Athlomedは、それを<br>ひとつにまとめます。</div>
+        <a href="#product" style="color:#7DD3FC;font-size:13.5px;font-weight:600" data-hv="hv5">解決する仕組みを見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="product" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1160px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:700px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">SOLUTION</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.4;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">6つのモジュールが、<br>ひとりの選手に集約される。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155">それぞれ独立したツールではなく、同じデータ構造の上に成り立つひとつのプラットフォームです。</p>
+    </div>
+
+    <div data-reveal style="margin-top:52px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+      
+        <button type="button" class="tab-btn" data-tab="dashboard" aria-pressed="false" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#fff;color:#334155;border:1px solid #E2EBF6">ダッシュボード</button>
+      
+        <button type="button" class="tab-btn" data-tab="profile" aria-pressed="true" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#0F172A;color:#fff;border:1px solid #0F172A">選手プロフィール</button>
+      
+        <button type="button" class="tab-btn" data-tab="timeline" aria-pressed="false" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#fff;color:#334155;border:1px solid #E2EBF6">タイムライン</button>
+      
+        <button type="button" class="tab-btn" data-tab="soap" aria-pressed="false" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#fff;color:#334155;border:1px solid #E2EBF6">SOAP</button>
+      
+        <button type="button" class="tab-btn" data-tab="measure" aria-pressed="false" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#fff;color:#334155;border:1px solid #E2EBF6">測定</button>
+      
+        <button type="button" class="tab-btn" data-tab="injury" aria-pressed="false" style="cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;background:#fff;color:#334155;border:1px solid #E2EBF6">傷害</button>
+      
+    </div>
+
+    <div data-reveal style="margin-top:28px;border-radius:16px;border:1px solid #DBE7F8;background:#fff;box-shadow:0 30px 60px -40px rgba(15,23,42,.3);overflow:hidden">
+      <div data-mock-body style="display:flex;min-height:520px;background:#F7FAFE">
+        <aside data-desk style="width:180px;flex:none;background:#0F172A;padding:18px 12px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:9px;padding:6px 8px 20px">
+            <img src="assets/images/athlome-mark-96.png" loading="lazy" width="64" height="64" decoding="async" alt="" style="width:22px;height:22px;object-fit:contain;display:block;filter:brightness(1.35)">
+            <span style="color:#fff;font-weight:700;font-size:14px">Athlomed</span>
+          </div>
+          
+            <div data-nav="n0" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">ダッシュボード</div>
+          
+            <div data-nav="n1" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;background:#2563EB;color:#fff;font-weight:500">選手</div>
+          
+            <div data-nav="n2" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">チーム</div>
+          
+            <div data-nav="n3" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">スケジュール</div>
+          
+            <div data-nav="n4" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">SOAP</div>
+          
+            <div data-nav="n5" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">測定</div>
+          
+            <div data-nav="n6" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">傷害</div>
+          
+            <div data-nav="n7" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">リハビリ</div>
+          
+            <div data-nav="n8" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">コンディション</div>
+          
+            <div data-nav="n9" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">レポート</div>
+          
+            <div data-nav="n10" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;color:#94A3B8">設定</div>
+          
+        </aside>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+          <div style="padding:13px 20px;border-bottom:1px solid #E9F0F9;background:#fff;display:flex;align-items:center;gap:10px;font-size:11.5px;color:#64748B">
+            <span>選手一覧</span><span style="color:#CBD5E1">/</span><span id="mock-crumb" style="color:#0F172A;font-weight:500">鈴木 大輝</span>
+          </div>
+
+          <div class="tabpanel" data-tab="profile">
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                  <span style="width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,#E2EBF6,#CBD5E1);flex:none;display:block"></span>
+                  <div>
+                    <div style="font-size:19px;font-weight:700;color:#0F172A">鈴木 大輝</div>
+                    <div style="font-size:11px;color:#94A3B8;margin:3px 0 8px">すずき だいき</div>
+                    <div style="display:flex;gap:6px">
+                      <span style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:3px 8px">FW</span>
+                      <span style="font-family:'Roboto Mono',monospace;font-size:10px;color:#334155;background:#F1F5F9;border-radius:5px;padding:3px 8px">#10</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:11px">
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">生年月日</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">2002/04/15</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">身長 / 体重</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">176cm / 72kg</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">所属チーム</span><span style="color:#0F172A">トップチーム</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">利き足</span><span style="color:#0F172A">右</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">ステータス</span><span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:2px 8px">Partial</span></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                    <span style="font-size:12.5px;font-weight:700;color:#0F172A">最新のコンディション</span>
+                    <span style="font-size:10.5px;color:#166534;background:#DCFCE7;border-radius:5px;padding:3px 8px;font-weight:700">良い</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">疲労感</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 40% 0 0;background:#2563EB;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">3/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">睡眠の質</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 20% 0 0;background:#2563EB;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">4/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">筋肉痛</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 60% 0 0;background:#0EA5E9;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">2/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">ストレス</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 60% 0 0;background:#0EA5E9;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">2/5</span></div>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">今週のアクティビティ</div>
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">SOAP記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">3回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">測定記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">2回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">トレーニング<span style="font-family:'Roboto Mono',monospace;color:#0F172A">5回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">傷害の記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">1件</span></div>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+                  <span style="font-size:12.5px;font-weight:700;color:#0F172A">直近の傷害</span>
+                  <span style="font-size:12px;color:#334155">右足関節捻挫</span>
+                  <span style="font-size:10.5px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 8px;font-weight:700">リハビリ中</span>
+                  <span style="margin-left:auto;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B">受傷日 2026/07/10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabpanel" data-tab="timeline" hidden>
+            <div style="padding:20px">
+              <div style="display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap">
+                <span style="font-size:11px;font-weight:700;color:#fff;background:#2563EB;border-radius:6px;padding:6px 12px">すべて</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">SOAP</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">測定</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">傷害</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">リハビリ</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">コンディション</span>
+              </div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:#94A3B8;margin-bottom:12px">2026年8月</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">8/08</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#2563EB;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 8px">SOAP</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">SOAP記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">トレーニング後の右膝の違和感について</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">8/07</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#0E7490;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#0E7490;background:#ECFEFF;border-radius:5px;padding:4px 8px">測定</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">測定記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">体組成・ジャンプテスト・スプリント測定</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">8/06</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#166534;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#166534;background:#DCFCE7;border-radius:5px;padding:4px 8px">コンディション</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">コンディション記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">コンディション：良い</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">8/04</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#92400E;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:4px 8px">トレーニング</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">トレーニング記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">フィジカルトレーニング</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">7/10</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#991B1B;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#991B1B;background:#FEE2E2;border-radius:5px;padding:4px 8px">傷害</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">傷害記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">右足関節捻挫（受傷）</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">7/11</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#2563EB;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 8px">SOAP</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">SOAP記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">受傷後の初期評価</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">7/15</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:#4338CA;box-shadow:0 0 0 3px #F7FAFE;display:block"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="flex:none;font-size:10px;font-weight:700;color:#4338CA;background:#EEF2FF;border-radius:5px;padding:4px 8px">リハビリ</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">リハビリ記録</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">リハビリ開始</div>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="tabpanel" data-tab="soap" hidden>
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">S</span><span style="font-size:12px;font-weight:700;color:#0F172A">Subjective（主観的情報）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝に違和感あり。走るときに軽い痛みを感じる。特に方向転換時に違和感が強い。</p>
+                  <div style="text-align:right;font-family:'Roboto Mono',monospace;font-size:10px;color:#CBD5E1;margin-top:8px">46 / 1000</div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">O</span><span style="font-size:12px;font-weight:700;color:#0F172A">Objective（客観的情報）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝外側に圧痛あり。可動域：正常。MMT：5/5。腫脹：軽度。</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">A</span><span style="font-size:12px;font-weight:700;color:#0F172A">Assessment（評価）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝外側のオーバーユースによる炎症の可能性。靱帯損傷の可能性は低い。</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">P</span><span style="font-size:12px;font-weight:700;color:#0F172A">Plan（計画）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">アイシング、ストレッチ、負荷調整。明日再評価。</p>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="font-size:11px;color:#64748B;margin-bottom:7px">記録日</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-family:'Roboto Mono',monospace;font-size:12px;color:#0F172A">2026/08/08</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">記録者</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-size:12px;color:#0F172A">山田 太郎（AT）</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">カテゴリ</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-size:12px;color:#0F172A">トレーニング後</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">タグ</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <span style="font-size:11px;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 9px">右膝</span>
+                    <span style="font-size:11px;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 9px">違和感</span>
+                    <span style="font-size:11px;color:#94A3B8;border:1px dashed #CBD5E1;border-radius:5px;padding:4px 9px">+ タグを追加</span>
+                  </div>
+                </div>
+                <div style="background:#EFF6FF;border:1px solid #DBE7F8;border-radius:10px;padding:14px 16px">
+                  <div style="font-size:11.5px;font-weight:700;color:#1D4ED8;margin-bottom:6px">この記録は自動的に連携されます</div>
+                  <p style="margin:0;font-size:11.5px;line-height:1.9;color:#334155">選手プロフィール / タイムライン / 傷害「右足関節捻挫」の経過に紐づきます。</p>
+                </div>
+                <div style="display:flex;gap:8px;justify-content:flex-end">
+                  <span style="font-size:12px;color:#334155;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:9px 16px">キャンセル</span>
+                  <span style="font-size:12px;font-weight:700;color:#fff;background:#2563EB;border-radius:7px;padding:9px 20px">保存</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabpanel" data-tab="measure" hidden>
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">体組成 ・ 前回比</div>
+                <div style="display:flex;flex-direction:column">
+                  <div style="display:flex;font-size:10.5px;color:#94A3B8;padding-bottom:9px;border-bottom:1px solid #E2EBF6"><span style="flex:1">項目</span><span style="width:70px;text-align:right">測定値</span><span style="width:70px;text-align:right">前回比</span></div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">体重</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">72.4 kg</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0EA5E9">-0.3 kg</span>
+                    </div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">体脂肪率</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">12.3 %</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0EA5E9">-0.5 %</span>
+                    </div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">筋肉量</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">58.6 kg</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#166534">+0.6 kg</span>
+                    </div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">体水分率</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">60.2 %</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#166534">+0.8 %</span>
+                    </div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">膝屈曲 ROM</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">138 °</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#166534">+6 °</span>
+                    </div>
+                  
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">等尺性筋力（健側比）</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">92 %</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#166534">+4 %</span>
+                    </div>
+                  
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px">
+                    <span style="font-size:13px;font-weight:700;color:#0F172A">膝関節屈曲 ROM 推移</span>
+                    <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B">deg</span>
+                  </div>
+                  <div style="display:flex;align-items:flex-end;gap:10px;height:140px;padding-bottom:22px;position:relative;border-bottom:1px solid #E2EBF6">
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">96</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:66%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">6/20</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">104</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:72%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">6/27</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">112</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:77%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">7/04</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">118</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:81%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">7/11</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">126</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:87%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">7/18</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">132</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:91%;background:#BFDBFE"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">7/25</span>
+                      </div>
+                    
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">138</span>
+                        <span style="width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:95%;background:#2563EB"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">8/01</span>
+                      </div>
+                    
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px"><span style="font-size:13px;font-weight:700;color:#0F172A">測定メモ</span><span style="display:flex;gap:6px"><span style="font-size:10.5px;font-weight:700;color:#334155;border:1px solid #E2EBF6;border-radius:6px;padding:5px 10px">PDF出力</span><span style="font-size:10.5px;font-weight:700;color:#334155;border:1px solid #E2EBF6;border-radius:6px;padding:5px 10px">Excel出力</span></span></div>
+                  <p style="margin:0 0 12px;font-size:12px;line-height:1.9;color:#334155">コンディション良好。筋肉量が増加傾向。健側比 92%、次回で復帰判定の再評価を実施予定。</p>
+                  <div style="background:#EFF6FF;border:1px solid #DBE7F8;border-radius:9px;padding:12px 14px;font-size:11.5px;line-height:1.9;color:#334155"><span style="font-weight:700;color:#1D4ED8">SOAPへ自動反映：</span>膝屈曲ROM +6°、健側比 92% がSOAPの「A（評価）」に追記されます。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabpanel" data-tab="injury" hidden>
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+                  <span style="font-size:16px;font-weight:700;color:#0F172A">右足関節捻挫</span>
+                  <span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 8px">リハビリ中</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">受傷日</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">2026/07/10</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">受傷状況</span><span style="color:#0F172A;flex:1;line-height:1.8">トレーニング中の着地時に内反</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">重症度</span><span style="color:#0F172A">Grade 2</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">部位</span><span style="color:#0F172A">右足関節（外側）</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">ICD-10コード</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">S93.4</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">担当者</span><span style="color:#0F172A">山田 太郎（AT）</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">RTP予定</span><span style="color:#2563EB;font-family:'Roboto Mono',monospace;font-weight:500">2026/08/25</span></div>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">経過</div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">7/10</span>
+                      <span style="width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:#991B1B;display:block"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">受傷</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">トレーニング中に受傷。腫脹・疼痛あり。</div>
+                      </div>
+                    </div>
+                  
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">7/11</span>
+                      <span style="width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:#2563EB;display:block"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">初期評価</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">荷重制限、可動域制限を確認。</div>
+                      </div>
+                    </div>
+                  
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">7/15</span>
+                      <span style="width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:#4338CA;display:block"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">リハビリ開始</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">可動域訓練・荷重訓練を開始。</div>
+                      </div>
+                    </div>
+                  
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">8/01</span>
+                      <span style="width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:#0EA5E9;display:block"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">ランニング開始</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">軽いジョギングから段階的に負荷を増加。</div>
+                      </div>
+                    </div>
+                  
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">8/15</span>
+                      <span style="width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:#94A3B8;display:block"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">競技復帰テスト（予定）</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">方向転換動作を含む機能テストを実施予定。</div>
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabpanel" data-tab="dashboard" hidden>
+            <div style="padding:20px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">本日のセッション</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;line-height:1">12</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Out</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#991B1B;line-height:1">3</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Partial</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#92400E;line-height:1">5</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Full</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#166534;line-height:1">20</div></div>
+              </div>
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px;overflow-x:auto">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">コンディションマトリクス（今週）</div>
+                <div style="min-width:520px;display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;gap:8px;align-items:center">
+                    <span style="width:96px;flex:none"></span>
+                    <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">月</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">火</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">水</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">木</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">金</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">土</span><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">日</span>
+                  </div>
+                  
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">鈴木 大輝</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">5</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">7</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">8</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">6</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">4</span>
+                      
+                    </div>
+                  
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">田中 翔太</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">4</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">4</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">6</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">7</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">5</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                    </div>
+                  
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">佐藤 陸</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">1</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">5</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">4</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                    </div>
+                  
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">髙橋 悠斗</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">5</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">6</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">7</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">8</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEE2E2;color:#991B1B">7</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">6</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">5</span>
+                      
+                    </div>
+                  
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">渡辺 海斗</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#FEF9C3;color:#92400E">4</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">3</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                        <span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:#DCFCE7;color:#166534">2</span>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">すべての記録が、選手に紐づく</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">SOAP・測定・傷害・リハビリは、独立したフォームではなく同じ選手レコードの一部として保存されます。</p>
+      </div>
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">入力した数値が、そのまま評価になる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">測定記録は自動でグラフ化され、その結果はSOAPの「A（評価）」へ自動反映。転記の手間なく、経過が評価につながります。</p>
+      </div>
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">共有パスワードで引き継げる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">チームごとの共有パスワードを渡すだけで、他のトレーナーと同じカルテを扱えます。担当が交代する日も情報が途切れません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="connect" data-secpad data-pad style="padding:120px 32px;background:#0F172A;color:#fff">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal style="max-width:660px">
+      <div style="font-size:12px;font-weight:700;color:#7DD3FC;letter-spacing:.1em;margin-bottom:16px">DATA CONNECTION</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#fff;text-wrap:balance">記録を、データへ。<br>データを、次の判断へ。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#94A3B8;text-wrap:pretty">受傷から復帰まで、現場で発生するすべての情報がひとつの流れとしてつながります。</p>
+    </div>
+    <div data-reveal style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">01</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Athlete</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">すべての起点となる選手レコード</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">02</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Timeline</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">起きたことを時系列で一本の線に</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">03</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">SOAP</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">現場での評価と処置の記録</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">04</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Measurement</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">ROM・筋力・パフォーマンスの数値</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">05</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Injury</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">受傷部位・診断・重症度の管理</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">06</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Rehabilitation</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">段階的な復帰プログラムの経過</span>
+        </div>
+      
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">07</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">Return to Play</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">復帰判断の根拠が記録として残る</span>
+        </div>
+      
+    </div>
+    <div data-reveal style="margin-top:28px;padding:24px 26px;border-radius:12px;background:rgba(37,99,235,.12);border:1px solid rgba(125,211,252,.24);font-size:15px;line-height:1.9;color:#E2E8F0">
+      それぞれの記録は、選手というひとつの軸の上に時系列で積み上がります。<span style="color:#fff;font-weight:700">選手の過去を、未来につなげる。</span>
+    </div>
+  </div>
+</section>
+
+<section id="why" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:640px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">WHY ATHLOME</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">記録アプリではなく、<br>データ基盤であること。</h2>
+    </div>
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#E2EBF6;border:1px solid #E2EBF6;border-radius:14px;overflow:hidden">
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Athlete-centric</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">すべての情報が「選手」を中心に整理されます。部署でも書式でもなく、選手が主語です。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Longitudinal</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">高校から大学、プロへ。年をまたいでデータが蓄積され、キャリアを通じた記録になります。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Structured</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">重要な情報は自由記述のまま埋もれず、検索・比較・集計できる構造化データになります。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Connected</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">SOAP・測定・傷害・タイムラインが相互に参照され、判断の根拠がひと目で追えます。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Portable</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">担当するチームが増えても減っても、カルテはあなたのアカウントに残り続けます。</p>
+      </div>
+      <div style="background:#F7FAFE;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Secure</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">アカウント種別ごとの権限とアクセス履歴により、医療情報として扱うべきデータを保護します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="accounts" data-secpad data-pad style="padding:120px 32px;background:#F7FAFE;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:660px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">ACCOUNTS &amp; SHARING</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">カルテはあなたのもの。<br>共有範囲は、あなたが決める。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">Athlomedの管理者はメディカルスタッフです。アカウント種別ごとにできることを明確に分け、選手・スタッフ・他のトレーナーへ必要な範囲だけを開きます。</p>
+    </div>
+
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:stretch">
+      <div style="background:#0F172A;border:1px solid #0F172A;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#0F172A;background:#7DD3FC;border-radius:5px;padding:3px 9px">管理者</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:10px">メディカルスタッフ</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#94A3B8">AT・PT・柔道整復師・スポーツドクターなど、現場で記録を書く人のためのアカウント。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#E2E8F0;line-height:1.7">
+          <div>カルテの作成・編集・閲覧（すべての権限）</div>
+          <div>複数チームのカルテをチームごとに作成・管理</div>
+          <div>記録テンプレートを自分で追加・編集</div>
+          <div>アカウント発行と共有範囲の設定</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#166534;background:#DCFCE7;border-radius:5px;padding:3px 9px">入力＋閲覧</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:10px">選手アカウント</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#64748B">選手本人が、毎日のコンディションを自分で入力するためのアカウント。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#334155;line-height:1.7">
+          <div>日々のコンディションチェックの入力</div>
+          <div>自分の記録の閲覧</div>
+          <div>それ以外の項目は閲覧のみ（編集不可）</div>
+          <div>他の選手の情報にはアクセス不可</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 9px">閲覧のみ</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:10px">スタッフアカウント</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#64748B">監督・コーチなど、選手の状態を把握する必要があるチームスタッフ向け。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#334155;line-height:1.7">
+          <div>選手のコンディション・出場可否の閲覧</div>
+          <div>チーム全体の状況の把握</div>
+          <div>記録の入力・編集はできません</div>
+          <div>公開範囲はメディカルスタッフが設定</div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div style="background:#fff;border:1px solid #DBE7F8;border-radius:16px;padding:30px 28px">
+        <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.08em;margin-bottom:14px">PASSWORD SHARING</div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:12px">パスワードで、チームのカルテを他のトレーナーと共有</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B;text-wrap:pretty">チームごとに発行される共有パスワードを渡すだけで、他のトレーナーが同じチームのカルテにアクセスできます。帯同が交代する日も、複数人で担当する現場も、情報が途切れません。共有はいつでも停止でき、アクセス履歴も残ります。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+        <div style="font-size:11.5px;color:#64748B">チーム共有パスワード</div>
+        <div style="display:flex;align-items:center;gap:10px;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 16px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:17px;letter-spacing:.14em;color:#0F172A">ATH-7K2M-9QD4</span>
+          <span style="margin-left:auto;font-size:11.5px;font-weight:700;color:#2563EB">コピー</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#64748B">
+          <span style="width:7px;height:7px;border-radius:50%;background:#22C55E;display:block"></span>
+          現在 2名のトレーナーが共有中 ・ 有効期限 30日
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:640px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">PRICING</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">料金プラン</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155">Athlomedは、メディカルスタッフ個人がご契約いただくサービスです。チーム単位・組織単位の契約はありません。価格は1名あたりの月額です。</p>
+    </div>
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch;max-width:760px;margin-left:auto;margin-right:auto">
+      <div style="border:1px solid #E2EBF6;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="font-size:16px;font-weight:700;color:#0F172A">Free</div>
+        <p style="margin:8px 0 20px;font-size:13px;line-height:1.8;color:#64748B">まず1チームから試したい方へ</p>
+        <div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;padding-bottom:22px;border-bottom:1px solid #E2EBF6" id="free-price">¥0<span style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#64748B;font-weight:400"> / 月</span></div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin:22px 0 26px;font-size:13px;color:#334155;line-height:1.7">
+          <div>チーム 1つ ・ 選手 5名まで</div>
+          <div>SOAP・測定・傷害・リハビリの記録</div>
+          <div>タイムライン</div>
+          <div>測定記録の自動グラフ化</div>
+          <div>選手アカウント（コンディション入力）</div>
+        </div>
+        <a href="#cta" style="margin-top:auto;text-align:center;border:1px solid #D8E4F5;color:#0F172A;font-size:14px;font-weight:700;padding:13px;border-radius:9px" data-hv="hv4">ウェイティングリストに登録</a>
+      </div>
+      <div style="border:1.5px solid #2563EB;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;box-shadow:0 20px 50px -30px rgba(37,99,235,.6);position:relative">
+        <span style="position:absolute;top:-11px;left:28px;background:#2563EB;color:#fff;font-size:11px;font-weight:700;border-radius:999px;padding:5px 12px">おすすめ</span>
+        <div style="font-size:16px;font-weight:700;color:#0F172A">Pro</div>
+        <p style="margin:8px 0 20px;font-size:13px;line-height:1.8;color:#64748B">複数チームを担当するメディカルスタッフへ</p>
+        <div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;padding-bottom:22px;border-bottom:1px solid #E2EBF6"><span id="pro-price">¥3,980</span><span style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#64748B;font-weight:400"> / 月・1名</span><div id="pro-price-note" style="font-family:'Noto Sans JP',sans-serif;font-size:11.5px;color:#94A3B8;font-weight:400;margin-top:8px">税込。トレーナーアカウント1つあたり</div></div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin:22px 0 26px;font-size:13px;color:#334155;line-height:1.7">
+          <div>Freeのすべての機能</div>
+          <div>チーム数・選手数 無制限</div>
+          <div>記録テンプレートの追加・編集</div>
+          <div>測定結果のSOAP「A」への自動反映</div>
+          <div>グラフ・結果表のPDF出力 / Excel出力</div>
+          <div>パスワードによるカルテ共有</div>
+          <div>スタッフアカウント（閲覧のみ）の発行</div>
+          <div>メールサポート</div>
+        </div>
+        <a href="#cta" style="margin-top:auto;text-align:center;background:#2563EB;color:#fff;font-size:14px;font-weight:700;padding:13px;border-radius:9px" data-hv="hv2">ウェイティングリストに登録</a>
+        <a href="/checkout" data-en="Preview the checkout summary" style="margin-top:12px;text-align:center;font-size:12px;color:#64748B;text-decoration:underline">お申し込み内容の確認画面を見る</a>
+      </div>
+    </div>
+    <div data-reveal style="margin:28px auto 0;max-width:760px;border:1px solid #E2EBF6;border-radius:14px;padding:24px 26px;background:#F7FAFE">
+      <div data-en="Billing, cancellation and refunds" style="font-size:13.5px;font-weight:700;color:#0F172A;margin-bottom:14px">料金・解約・返金について</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.9;color:#334155">
+        <p data-en="The Free plan is not a time-limited trial — it stays free. It never upgrades to Pro automatically." style="margin:0">Free Planは期間限定の無料体験ではなく、継続的にご利用いただける無料プランです。Free PlanからPro Planへ自動的に移行することはありません。</p>
+        <p data-en='The Pro plan renews automatically every month. <strong style="font-weight:700;color:#0F172A">You can cancel at any time.</strong> After you cancel you keep Pro until the end of the current period; no further renewal or charge is made.' style="margin:0">Pro Planは1か月ごとの自動更新です。<strong style="font-weight:700;color:#0F172A">いつでも解約できます。</strong>解約手続き後も現在の契約期間終了まではPro Planをご利用いただけます。次回の更新および請求は発生しません。</p>
+        <p data-en="No refunds are issued for the current billing period if you cancel mid-term." style="margin:0">契約期間途中に解約した場合でも、当該契約期間の利用料金の返金は行いません。</p>
+        <p data-en='Payment is handled online by Stripe. See the <a href="/legal/terms" style="color:#2563EB;font-weight:500">Terms of Service</a> and <a href="/legal/tokushoho" style="color:#2563EB;font-weight:500">Legal Information</a> for details (Japanese only).' style="margin:0">お支払いはStripeによるオンライン決済です。詳細は<a href="/legal/terms" style="color:#2563EB;font-weight:500">利用規約</a>および<a href="/legal/tokushoho" style="color:#2563EB;font-weight:500">特定商取引法に基づく表記</a>をご確認ください。</p>
+      </div>
+    </div>
+    <p data-reveal data-en="Issuing athlete and coaching staff accounts costs nothing extra." style="margin:20px 0 0;text-align:center;font-size:12.5px;color:#94A3B8">選手アカウント・スタッフアカウントの発行に追加費用はかかりません。</p>
+  </div>
+</section>
+
+<section id="faq" data-secpad data-pad style="padding:120px 32px;background:#F7FAFE;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:840px;margin:0 auto">
+    <div data-reveal style="text-align:center;margin-bottom:48px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">FAQ</div>
+      <h2 data-sec-h2 data-en="Frequently asked questions" style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">よくあるご質問</h2>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:10px">
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">01</span>
+          <span data-en='Who is Athlomed for?' style="flex:1">Athlomedは誰のためのサービスですか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Athlomed is for individual medical staff who write athlete records in the field — athletic trainers, physical therapists, judo therapists, S&amp;C coaches and sports physicians. Licences are per person; there are no team or organization contracts.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">アスレティックトレーナー、理学療法士、柔道整復師、S&Cコーチ、スポーツドクターなど、現場で選手の記録を書くメディカルスタッフ個人向けのサービスです。ご契約はスタッフ個人単位で、チーム単位・組織単位の契約はありません。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">02</span>
+          <span data-en='Can athletes and coaches have accounts too?' style="flex:1">選手やコーチもアカウントを持てますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Yes. Athlete accounts can submit the daily condition check and view their own records. Coaching staff accounts are view-only. Neither costs extra, and the medical staff member sets what each can see.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">はい。選手アカウントは日々のコンディションチェックの入力と自分の記録の閲覧ができます。監督・コーチ等のスタッフアカウントは閲覧のみです。いずれも発行に追加費用はかかりません。公開範囲はメディカルスタッフが設定します。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">03</span>
+          <span data-en='Can I share charts with another trainer?' style="flex:1">他のトレーナーとカルテを共有できますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Hand over the password issued for a team and another trainer can access the same charts. Sharing can be revoked at any time, and access history is kept.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">チームごとに発行される共有パスワードをお渡しいただくことで、他のトレーナーが同じチームのカルテにアクセスできます。共有はいつでも停止でき、アクセス履歴も残ります。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">04</span>
+          <span data-en='Does the Free plan become paid after a trial period?' style="flex:1">Free Planは無料期間が終わると有料になりますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='No. The Free plan is not a time-limited trial — it stays free, and it never upgrades to Pro automatically.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">いいえ。Free Planは期間限定の無料体験ではなく、継続的にご利用いただける無料プランです。Free PlanからPro Planへ自動的に移行することはありません。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">05</span>
+          <span data-en='Can I cancel the Pro plan at any time?' style="flex:1">Pro Planはいつでも解約できますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Yes, you can cancel at any time. Cancellation is not immediate — it stops the next renewal. You keep Pro until the end of the current period, no further renewal or charge is made, and the account then moves to the Free plan.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">はい、いつでも解約手続きができます。ただし解約は即時ではなく、次回更新の停止です。解約手続き後も現在の契約期間終了まではPro Planをご利用いただけ、次回の更新および請求は発生しません。契約期間終了後は自動的にFree Planへ移行します。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">06</span>
+          <span data-en='Do I get a refund if I cancel mid-period?' style="flex:1">契約期間の途中で解約した場合、返金はありますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='No refunds (including pro-rata) are issued for the current billing period. See the <a href="/legal/terms" style="color:#2563EB;font-weight:500">Terms of Service</a> and <a href="/legal/tokushoho" style="color:#2563EB;font-weight:500">Legal Information</a> for details (Japanese only).' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">契約期間途中に解約した場合でも、当該契約期間の利用料金の返金（日割り・月割りを含む）は行いません。詳細は<a href="/legal/terms" style="color:#2563EB;font-weight:500">利用規約</a>および<a href="/legal/tokushoho" style="color:#2563EB;font-weight:500">特定商取引法に基づく表記</a>をご確認ください。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">07</span>
+          <span data-en='What payment methods are accepted?' style="flex:1">支払い方法は何が使えますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Online payment via Stripe (credit card and others). We never hold your card details.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">Stripeによるオンライン決済（クレジットカード等）です。カード情報は当方では保有しません。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">08</span>
+          <span data-en='Can Athlomed be used to make medical decisions?' style="flex:1">Athlomedは医療行為の判断に使えますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='No. Athlomed is a tool for recording and organising information. It does not replace diagnosis, treatment decisions or return-to-play judgements made by qualified professionals.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">いいえ。Athlomedは記録および情報整理のためのツールであり、医師その他の有資格者による診断・治療方針の決定・復帰可否の判断を代替するものではありません。</div>
+      </details>
+      <details class="faq-item" style="border:1px solid #E2EBF6;border-radius:12px;background:#fff;overflow:hidden">
+        <summary style="cursor:pointer;list-style:none;padding:20px 22px;font-size:14.5px;font-weight:700;color:#0F172A;line-height:1.7;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#2563EB;flex:none;padding-top:3px">09</span>
+          <span data-en='When can I start using it?' style="flex:1">いつから使えますか？</span>
+          <span class="faq-mark" aria-hidden="true" style="flex:none;color:#94A3B8;font-size:16px;line-height:1.5">＋</span>
+        </summary>
+        <div data-en='Athlomed is preparing for launch. Join the waiting list to be notified when it opens.' style="padding:0 22px 22px 58px;font-size:13.5px;line-height:2;color:#334155">現在、提供準備中です。提供開始のご案内をご希望の方は、ウェイティングリストにご登録ください。</div>
+      </details>
+    </div>
+    <p data-reveal data-en='For anything else, please <a href="/contact" style="color:#2563EB;font-weight:500">get in touch</a>.' style="margin:28px 0 0;text-align:center;font-size:13px;color:#64748B">その他のご質問は<a href="/contact" style="color:#2563EB;font-weight:500">お問い合わせ</a>までご連絡ください。</p>
+  </div>
+</section>
+
+<section id="operator" data-secpad data-pad style="padding:96px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:840px;margin:0 auto">
+    <div data-reveal style="margin-bottom:36px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">OPERATOR</div>
+      <h2 data-sec-h2 data-en="Operator information" style="margin:0;font-size:32px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">運営者情報</h2>
+    </div>
+    <div data-reveal style="border:1px solid #E2EBF6;border-radius:14px;overflow:hidden">
+      <dl style="margin:0;display:flex;flex-direction:column">
+        <div style="display:flex;gap:20px;padding:18px 24px;border-bottom:1px solid #F1F5F9;font-size:13.5px;line-height:1.9;flex-wrap:wrap"><dt data-en="Operator" style="margin:0;width:9rem;flex:none;color:#64748B">運営者</dt><dd data-en="太田 陽登 (sole proprietor)" style="margin:0;flex:1;min-width:200px;color:#0F172A">太田 陽登（個人事業主）</dd></div>
+        <div style="display:flex;gap:20px;padding:18px 24px;border-bottom:1px solid #F1F5F9;font-size:13.5px;line-height:1.9;flex-wrap:wrap"><dt data-en="Service" style="margin:0;width:9rem;flex:none;color:#64748B">サービス名</dt><dd style="margin:0;flex:1;min-width:200px;color:#0F172A">Athlomed</dd></div>
+        <div style="display:flex;gap:20px;padding:18px 24px;border-bottom:1px solid #F1F5F9;font-size:13.5px;line-height:1.9;flex-wrap:wrap"><dt data-en="Address" style="margin:0;width:9rem;flex:none;color:#64748B">所在地</dt><dd data-en="Aoyama Marutake Bldg 6F, 3-1-36 Minami-Aoyama, Minato-ku, Tokyo 107-0062, Japan" style="margin:0;flex:1;min-width:200px;color:#0F172A">〒107-0062 東京都港区南青山3丁目1番36号 青山丸竹ビル6F</dd></div>
+        <div style="display:flex;gap:20px;padding:18px 24px;font-size:13.5px;line-height:1.9;flex-wrap:wrap"><dt data-en="Contact" style="margin:0;width:9rem;flex:none;color:#64748B">お問い合わせ</dt><dd style="margin:0;flex:1;min-width:200px"><a href="mailto:Athlomed.app@gmail.com" style="color:#2563EB">Athlomed.app@gmail.com</a></dd></div>
+      </dl>
+    </div>
+    <div data-reveal style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
+      <a href="/legal/terms" data-en="Terms of Service" style="font-size:13px;font-weight:600;padding:11px 16px;border:1px solid #E2EBF6;border-radius:8px;color:#334155">利用規約</a>
+      <a href="/legal/privacy" data-en="Privacy Policy" style="font-size:13px;font-weight:600;padding:11px 16px;border:1px solid #E2EBF6;border-radius:8px;color:#334155">プライバシーポリシー</a>
+      <a href="/legal/tokushoho" data-en="Legal Information" style="font-size:13px;font-weight:600;padding:11px 16px;border:1px solid #E2EBF6;border-radius:8px;color:#334155">特定商取引法に基づく表記</a>
+    </div>
+    <p data-reveal data-en="The legal documents above are available in Japanese only." style="margin:14px 0 0;font-size:12px;color:#94A3B8">法務文書は日本語でのみ提供しています。</p>
+  </div>
+</section>
+
+<section id="cta" data-secpad data-pad style="padding:120px 32px;background:linear-gradient(180deg,#FFFFFF,#F0F7FF)">
+  <div data-reveal style="max-width:720px;margin:0 auto;text-align:center">
+    <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">WAITING LIST</div>
+    <h2 data-sec-h2 style="margin:0;font-size:44px;line-height:1.4;font-weight:900;letter-spacing:-.035em;color:#0F172A;text-wrap:balance">選手データを、次のステージへ。</h2>
+    <p style="margin:22px auto 0;max-width:560px;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">Athlomedは現在、提供準備中です。ウェイティングリストにご登録いただいた方から順に、ご案内をお送りします。</p>
+
+    <div id="wl-done" hidden>
+      <div style="margin:38px auto 0;max-width:520px;background:#fff;border:1px solid #DBE7F8;border-radius:14px;padding:32px 28px">
+        <div style="width:44px;height:44px;border-radius:50%;background:#DCFCE7;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#166534;font-size:20px;font-weight:700">✓</div>
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:10px">ご登録ありがとうございます</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">提供開始のご案内を、ご登録のメールアドレスへお送りします。順番にご案内するため、しばらくお待ちください。</p>
+      </div>
+    </div>
+
+    <div id="wl-open">
+      <form action="https://formspree.io/f/mppaqeqw" method="post" id="waitlist-form" style="margin:38px auto 0;max-width:520px;background:#fff;border:1px solid #DBE7F8;border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px;text-align:left;box-shadow:0 24px 50px -34px rgba(15,23,42,.35)">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-email" style="font-size:12.5px;font-weight:700;color:#334155">メールアドレス</label>
+          <input id="wl-email" name="email" type="email" required aria-describedby="wl-email-error" placeholder="you@example.com" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+          <p id="wl-email-error" class="field-error" role="alert" hidden>メールアドレスの形式が正しくありません。</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-role" style="font-size:12.5px;font-weight:700;color:#334155">ご職種</label>
+          <select id="wl-role" name="role" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+            <option>アスレティックトレーナー</option>
+            <option>理学療法士</option>
+            <option>柔道整復師</option>
+            <option>S&amp;Cコーチ</option>
+            <option>スポーツドクター</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-teams" style="font-size:12.5px;font-weight:700;color:#334155">担当しているチーム数</label>
+          <select id="wl-teams" name="teams" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+            <option>1チーム</option>
+            <option>2〜3チーム</option>
+            <option>4チーム以上</option>
+            <option>これから担当予定</option>
+          </select>
+        </div>
+        <label for="wl-consent" style="display:flex;align-items:flex-start;gap:10px;font-size:12.5px;line-height:1.8;color:#334155;cursor:pointer">
+          <input id="wl-consent" name="consent" type="checkbox" required style="margin-top:3px;width:18px;height:18px;flex:none;accent-color:#2563EB;-webkit-appearance:auto;appearance:auto;cursor:pointer">
+          <span data-en='I agree to the <a href="/legal/terms" style="color:#2563EB;font-weight:500">Terms of Service</a> and <a href="/legal/privacy" style="color:#2563EB;font-weight:500">Privacy Policy</a> (Japanese only)'><a href="/legal/terms" style="color:#2563EB;font-weight:500">利用規約</a>と<a href="/legal/privacy" style="color:#2563EB;font-weight:500">プライバシーポリシー</a>に同意します</span>
+        </label>
+        <input type="hidden" name="_subject" value="Athlomed ウェイティングリスト登録">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <p id="wl-error" role="alert" hidden style="margin:0;font-size:12.5px;line-height:1.8;color:#991B1B;background:#FEE2E2;border-radius:8px;padding:12px 14px">送信に失敗しました。時間をおいて、もう一度お試しください。</p>
+        <button type="submit" style="cursor:pointer;font-family:inherit;background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:16px;border:none;border-radius:10px;min-height:52px;box-shadow:0 6px 20px -6px rgba(37,99,235,.55)" data-hv="hv6">ウェイティングリストに登録</button>
+        <p style="margin:0;font-size:11.5px;line-height:1.8;color:#94A3B8">ご登録は無料です。提供開始のご案内以外の目的でメールアドレスを利用することはありません。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-pad style="background:#0F172A;color:#94A3B8;padding:72px 32px 40px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px">
+      <div style="min-width:200px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <img src="assets/images/athlome-mark-96.png" loading="lazy" width="64" height="64" decoding="async" alt="" style="width:28px;height:28px;object-fit:contain;display:block;filter:brightness(1.35)">
+          <span style="color:#fff;font-weight:700;font-size:17px">Athlomed</span>
+        </div>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#64748B">選手のすべてを、ひとつにつなぐ。<br>スポーツ現場のためのアスリートデータプラットフォーム。</p>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Product</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="#product" style="color:#94A3B8" data-hv="hv7">機能</a>
+          <a href="#connect" style="color:#94A3B8" data-hv="hv7">データ連携</a>
+          <a href="#accounts" style="color:#94A3B8" data-hv="hv7">アカウントと共有</a>
+          <a href="#pricing" style="color:#94A3B8" data-hv="hv7">料金プラン</a>
+          <a href="#faq" data-en="FAQ" style="color:#94A3B8" data-hv="hv7">よくあるご質問</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Company</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="#operator" data-en="Operator" style="color:#94A3B8" data-hv="hv7">運営者情報</a>
+          <a href="#cta" style="color:#94A3B8" data-hv="hv7">ウェイティングリスト</a>
+          <a href="#why" style="color:#94A3B8" data-hv="hv7">選ばれる理由</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Legal</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="/legal/terms" data-en="Terms of Service" style="color:#94A3B8" data-hv="hv7">利用規約</a>
+          <a href="/legal/privacy" data-en="Privacy Policy" style="color:#94A3B8" data-hv="hv7">プライバシーポリシー</a>
+          <a href="/legal/tokushoho" data-en="Legal Information" style="color:#94A3B8" data-hv="hv7">特定商取引法に基づく表記</a>
+          <a href="/legal/security" data-en="Information Security Policy" style="color:#94A3B8" data-hv="hv7">情報セキュリティ基本方針</a>
+          <a href="/legal/consent/athlete" data-en="Athlete Consent Form" style="color:#94A3B8" data-hv="hv7">選手向け同意書</a>
+          <a href="/legal/consent/guardian" data-en="Guardian Consent Form" style="color:#94A3B8" data-hv="hv7">保護者向け同意書</a>
+          <a href="/legal/consent/medical" data-en="Medical Disclosure Consent Form" style="color:#94A3B8" data-hv="hv7">医療機関等への情報提供に関する同意書</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="/contact" data-en="Contact" style="color:#94A3B8" data-hv="hv7">お問い合わせ</a>
+          <a href="mailto:Athlomed.app@gmail.com" style="color:#94A3B8" data-hv="hv7">Athlomed.app@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:#64748B">
+      <span data-en="© 2026 Athlomed (operated by 太田 陽登)">© 2026 Athlomed（運営：太田 陽登）</span>
+      <span>Athlete Life Log Platform</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

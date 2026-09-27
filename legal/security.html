@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athlomed | 情報セキュリティ基本方針</title>
+<meta name="description" content="Athlomed（運営：太田 陽登）の情報セキュリティ基本方針。データの保管、通信および保存の暗号化、組織単位のデータ分離、監査ログ、インシデント対応、契約終了後のデータの取扱いについて定めています。">
+<meta name="theme-color" content="#0F172A">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Athlomed">
+<meta property="og:title" content="Athlomed | 情報セキュリティ基本方針">
+<meta property="og:description" content="Athlomedの情報セキュリティ基本方針。データ保管、暗号化、アクセス制御、監査ログ、インシデント対応について。">
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/legal.css">
+<link rel="canonical" href="https://athlomedonline.com/legal/security">
+<meta property="og:url" content="https://athlomedonline.com/legal/security">
+<meta property="og:image" content="https://athlomedonline.com/assets/images/athlome-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://athlomedonline.com/assets/images/athlome-og.png">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="lg-header">
+  <div class="inner">
+    <a class="lg-brand" href="/"><img src="/assets/images/athlome-mark-96.png" alt="" width="28" height="28" decoding="async">Athlomed</a>
+    <a class="lg-back" href="/">トップページへ戻る</a>
+  </div>
+</header>
+<div class="lg-hero"><div class="inner">
+  <nav class="lg-crumb" aria-label="パンくずリスト"><a href="/">ホーム</a><span>/</span>情報セキュリティ基本方針</nav>
+  <h1>情報セキュリティ基本方針</h1><p class="en">Information Security Policy</p>
+  <p class="desc">Athlomed（以下「本サービス」といいます。）は、選手の傷病歴、身体の状況その他の要配慮個人情報に該当し得る情報を取り扱います。太田 陽登（屋号：Athlomed。以下「当方」といいます。）は、これらの情報を安全に管理することが本サービスの根幹であると認識し、以下のとおり情報セキュリティ基本方針を定め、これを実施します。</p>
+  <p class="lg-updated"><span>制定日：<b>2026年8月16日</b></span><span>バージョン：<b>1.0</b></span></p>
+</div></div>
+<div class="lg-body">
+  <nav class="lg-toc" aria-label="目次"><h2>目次</h2><ol>
+    <li><a href="#policy">1. 基本姿勢</a></li>
+    <li><a href="#scope">2. 適用範囲</a></li>
+    <li><a href="#org">3. 管理体制</a></li>
+    <li><a href="#storage">4. データの保管</a></li>
+    <li><a href="#technical">5. 技術的セキュリティ対策</a></li>
+    <li><a href="#external">6. 外部サービスの利用</a></li>
+    <li><a href="#incident">7. インシデント対応</a></li>
+    <li><a href="#termination">8. 契約終了後のデータ</a></li>
+    <li><a href="#review">9. 見直し</a></li>
+    <li><a href="#contact">10. お問い合わせ</a></li>
+  </ol></nav>
+  <details class="lg-toc-m"><summary>目次</summary><ol>
+    <li><a href="#policy">1. 基本姿勢</a></li>
+    <li><a href="#scope">2. 適用範囲</a></li>
+    <li><a href="#org">3. 管理体制</a></li>
+    <li><a href="#storage">4. データの保管</a></li>
+    <li><a href="#technical">5. 技術的セキュリティ対策</a></li>
+    <li><a href="#external">6. 外部サービスの利用</a></li>
+    <li><a href="#incident">7. インシデント対応</a></li>
+    <li><a href="#termination">8. 契約終了後のデータ</a></li>
+    <li><a href="#review">9. 見直し</a></li>
+    <li><a href="#contact">10. お問い合わせ</a></li>
+  </ol></details>
+  <main class="lg-main" id="main">
+
+  <section class="lg-sec" id="policy"><h2><span class="no">01</span>基本姿勢</h2>
+    <p>当方は、本サービスにおいて取り扱う情報を、事業上の最重要資産として位置づけます。当方は、法令および契約上の要求事項を遵守し、情報の機密性、完全性および可用性を維持するために、継続的に対策を実施し、改善します。</p>
+  </section>
+
+  <section class="lg-sec" id="scope"><h2><span class="no">02</span>適用範囲</h2>
+    <p>本方針は、本サービスの提供に関わるすべての情報資産、システム、業務および関係者に適用されます。</p>
+  </section>
+
+  <section class="lg-sec" id="org"><h2><span class="no">03</span>管理体制</h2>
+    <div class="lg-tablewrap"><table class="lg-table lg-deflist"><tbody>
+      <tr><th scope="row">情報セキュリティ責任者</th><td>太田 陽登</td></tr>
+      <tr><th scope="row">個人情報保護管理責任者</th><td>太田 陽登</td></tr>
+      <tr><th scope="row">連絡窓口</th><td><a href="mailto:Athlomed.app@gmail.com">Athlomed.app@gmail.com</a></td></tr>
+    </tbody></table></div>
+    <p>当方は、情報セキュリティに関する規程を整備し、その運用状況を定期的に点検します。</p>
+  </section>
+
+  <section class="lg-sec" id="storage"><h2><span class="no">04</span>データの保管</h2>
+    <div class="lg-tablewrap"><table class="lg-table lg-deflist"><tbody>
+      <tr><th scope="row">データベース</th><td>Supabase（PostgreSQL）</td></tr>
+      <tr><th scope="row">保管リージョン</th><td>東京（日本国内）</td></tr>
+      <tr><th scope="row">アプリケーション実行環境</th><td>Netlify</td></tr>
+      <tr><th scope="row">ファイル保管</th><td>Supabase Storage</td></tr>
+      <tr><th scope="row">バックアップ</th><td>日次で取得</td></tr>
+      <tr><th scope="row">バックアップ保持期間</th><td>直近7日分</td></tr>
+    </tbody></table></div>
+    <p>当方は、クレジットカード番号を保有しません。決済に関する情報は、Stripe, Inc. において直接処理されます。</p>
+  </section>
+
+  <section class="lg-sec" id="technical"><h2><span class="no">05</span>技術的セキュリティ対策</h2>
+    <h3>5-1. 通信および保存</h3>
+    <ul>
+      <li>通信はすべてTLSにより暗号化しています。</li>
+      <li>データベースに保存される情報は暗号化されています。</li>
+      <li>パスワードはハッシュ化して保存し、当方は平文を保有しません。</li>
+    </ul>
+    <h3>5-2. アクセス制御</h3>
+    <ul>
+      <li><strong>組織単位のデータ分離：</strong>行単位のアクセス制御（Row Level Security）により、異なる契約者の組織間で選手情報が参照されることのないよう、データベースの層で制御しています。アプリケーションの不具合によって他組織のデータが表示されることを防ぐ設計です。</li>
+      <li><strong>役割に基づくアクセス制御：</strong>利用者の役割に応じて、閲覧および編集の範囲を制限しています。
+        <div class="lg-tablewrap" style="margin-top:12px"><table class="lg-table"><thead><tr><th scope="col">役割</th><th scope="col">権限</th></tr></thead><tbody>
+          <tr><th scope="row" style="font-weight:400">トレーナー（組織管理者・アスレティックトレーナー・理学療法士等）</th><td>所属組織の選手情報の閲覧および編集</td></tr>
+          <tr><th scope="row" style="font-weight:400">指導者（監督・コーチ）</th><td>所属組織の選手情報の閲覧のみ</td></tr>
+          <tr><th scope="row" style="font-weight:400">選手</th><td>自己に関する情報の閲覧、コンディション情報の入力</td></tr>
+          <tr><th scope="row" style="font-weight:400">保護者</th><td>当該選手に関する情報の閲覧のみ</td></tr>
+        </tbody></table></div>
+      </li>
+      <li><strong>多要素認証：</strong>利用者は多要素認証を設定することができます。</li>
+      <li><strong>セッション管理：</strong>一定時間操作がない場合、セッションを終了します。</li>
+    </ul>
+    <h3>5-3. ログおよび監査</h3>
+    <ul>
+      <li>個人データへのアクセス、作成、更新、削除およびエクスポートの操作について、実行者、日時、対象および接続元IPアドレスを記録しています。</li>
+      <li><strong>監査ログは追記のみを行い、事後の改変ができない設計としています。</strong></li>
+      <li>医療機関等への情報提供については、提供先、提供した情報の種別、目的および日時を記録し、法令に定める期間保存します。</li>
+    </ul>
+    <h3>5-4. 開発および運用</h3>
+    <ul>
+      <li>依存パッケージの脆弱性を継続的に監視し、重大な脆弱性が判明した場合は速やかに対応します。</li>
+      <li>本番環境の認証情報は、環境変数として管理し、ソースコードに含めません。</li>
+      <li>当方の運営担当者は、原則として契約者のデータを閲覧しません。障害対応その他やむを得ない場合に閲覧するときは、その事実を記録します。</li>
+    </ul>
+  </section>
+
+  <section class="lg-sec" id="external"><h2><span class="no">06</span>外部サービスの利用</h2>
+    <p>当方は、以下の外部サービスを利用しています。いずれについても、委託先として必要かつ適切な監督を行っています。</p>
+    <div class="lg-tablewrap"><table class="lg-table"><thead><tr><th scope="col">サービス</th><th scope="col">提供事業者</th><th scope="col">用途</th></tr></thead><tbody>
+      <tr><th scope="row" style="font-weight:400">Supabase</th><td>Supabase, Inc.（米国）</td><td>データベース、認証基盤、ファイル保管</td></tr>
+      <tr><th scope="row" style="font-weight:400">Netlify</th><td>Netlify, Inc.（米国）</td><td>ウェブサイトおよびアプリケーションの配信、ログ管理</td></tr>
+      <tr><th scope="row" style="font-weight:400">Stripe</th><td>Stripe, Inc.（米国）</td><td>決済処理</td></tr>
+      <tr><th scope="row" style="font-weight:400">Resend</th><td>Resend, Inc.（米国）</td><td>通知メールの配信</td></tr>
+    </tbody></table></div>
+    <div class="lg-callout"><strong>当方は、選手の傷害、コンディションおよび医療に関する情報を、外部の生成AIサービスその他の外部APIに送信しません。</strong><br>当方は、選手の傷害、コンディションおよび医療に関する情報を取り扱う画面に、広告配信またはターゲティングを目的とした第三者のタグを設置しません。</div>
+  </section>
+
+  <section class="lg-sec" id="incident"><h2><span class="no">07</span>インシデント対応</h2>
+    <p>当方は、情報の漏えい、滅失または毀損その他の事案（以下「インシデント」といいます。）が発生し、またはそのおそれが生じた場合、以下の手順により対応します。</p>
+    <div class="lg-tablewrap"><table class="lg-table"><thead><tr><th scope="col">段階</th><th scope="col">対応内容</th></tr></thead><tbody>
+      <tr><th scope="row" style="font-weight:400">1. 検知・初動</th><td>事象を検知した場合、直ちに影響の拡大を防止するための措置（該当機能の停止、アクセス遮断等）を講じます。</td></tr>
+      <tr><th scope="row" style="font-weight:400">2. 影響範囲の調査</th><td>監査ログ等に基づき、影響を受けた情報の範囲、件数および原因を調査します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">3. 証拠の保全</th><td>ログその他の関連する記録を保全します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">4. 報告要否の判断</th><td>要配慮個人情報が含まれる場合等、法令に定める要件に該当するかを判断します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">5. 個人情報保護委員会への報告</th><td>法令に定める要件に該当する場合、速報および確報を提出します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">6. 本人への通知</th><td>影響を受けた選手本人および法定代理人ならびに契約者に対し、事案の内容および対応状況を通知します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">7. 原因分析・再発防止</th><td>原因を分析し、再発防止策を実施します。</td></tr>
+    </tbody></table></div>
+    <p>要配慮個人情報が含まれる個人データの漏えい等が発生した場合、当方は、法令に基づき個人情報保護委員会への報告および本人への通知を行います。</p>
+  </section>
+
+  <section class="lg-sec" id="termination"><h2><span class="no">08</span>契約終了後のデータ</h2>
+    <div class="lg-tablewrap"><table class="lg-table"><thead><tr><th scope="col">段階</th><th scope="col">内容</th></tr></thead><tbody>
+      <tr><th scope="row" style="font-weight:400">契約終了</th><td>本サービスの利用を停止します。</td></tr>
+      <tr><th scope="row" style="font-weight:400">終了後30日間</th><td>契約者はデータをエクスポートすることができます。</td></tr>
+      <tr><th scope="row" style="font-weight:400">30日経過後</th><td>契約者データを、復元できない方法により消去します。</td></tr>
+    </tbody></table></div>
+    <p>ただし、同意に関する記録、第三者提供に関する記録、決済に関する記録その他法令上または業務上必要な情報については、必要な期間保持することがあります。</p>
+  </section>
+
+  <section class="lg-sec" id="review"><h2><span class="no">09</span>見直し</h2>
+    <p>当方は、本方針および具体的なセキュリティ対策について、法令の改正、技術の進歩および本サービスの変更に応じて、定期的に見直しを行います。</p>
+  </section>
+
+  <section class="lg-sec" id="contact"><h2><span class="no">10</span>お問い合わせ</h2>
+    <p>本方針およびセキュリティ対策に関するお問い合わせ、ならびに導入検討にあたってのセキュリティチェックシートへのご回答のご依頼は、以下までご連絡ください。</p>
+    <div class="lg-contactbox">Athlomed 情報セキュリティ窓口<br>情報セキュリティ責任者：太田 陽登<br>メールアドレス：<a href="mailto:Athlomed.app@gmail.com">Athlomed.app@gmail.com</a></div>
+    <p class="lg-note">本方針は、2026年8月16日から適用します。</p>
+  </section>
+
+  <div class="lg-related">
+    <h2>関連ページ</h2>
+    <div class="links">
+      <a href="/legal/privacy">プライバシーポリシー</a>
+      <a href="/legal/terms">利用規約</a>
+      <a href="/legal/tokushoho">特定商取引法に基づく表記</a>
+      <a href="/contact">お問い合わせ</a>
+    </div>
+    <p style="margin-top:20px"><a class="lg-top" href="#main">ページ上部へ戻る</a></p>
+  </div>
+  </main>
+</div>
+<footer style="background:#0F172A;color:#94A3B8;padding:48px 24px 32px;font-family:'Noto Sans JP',system-ui,sans-serif">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between">
+      <div style="min-width:240px">
+        <a href="/" style="display:flex;align-items:center;gap:10px;margin-bottom:14px;color:#fff;text-decoration:none"><img src="/assets/images/athlome-mark-96.png" alt="" width="24" height="24" loading="lazy" decoding="async" style="object-fit:contain"><span style="font-weight:700;font-size:16px">Athlomed</span></a>
+        <p style="margin:0;font-size:12.5px;line-height:1.9;color:#64748B">運営：太田 陽登（個人事業主）<br>〒107-0062 東京都港区南青山3丁目1番36号 青山丸竹ビル6F<br><a href="mailto:Athlomed.app@gmail.com" style="color:#94A3B8">Athlomed.app@gmail.com</a></p>
+        <p style="margin:14px 0 0;font-size:11.5px;line-height:1.8;color:#64748B">本サービスは医療機関ではなく、疾病の診断、治療または予防に使用されることを目的としたものではありません。</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13px;align-items:flex-start">
+        <a href="/" style="color:#94A3B8">トップページ</a>
+        <a href="/legal/terms" style="color:#94A3B8">利用規約</a>
+        <a href="/legal/privacy" style="color:#94A3B8">プライバシーポリシー</a>
+        <a href="/legal/tokushoho" style="color:#94A3B8">特定商取引法に基づく表記</a>
+        <a href="/legal/security" style="color:#94A3B8">情報セキュリティ基本方針</a>
+        <a href="/contact" style="color:#94A3B8">お問い合わせ</a>
+      </div>
+    </div>
+    <div style="margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#64748B">© 2026 Athlomed（運営：太田 陽登）</div>
+  </div>
+</footer>
+<script src="/js/legal.js" defer></script>
+</body>
+</html>
