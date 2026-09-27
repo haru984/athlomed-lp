@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Athlomed | 選手のすべてを、ひとつにつなぐ。スポーツ現場のデータ管理SaaS</title>
+<meta name="description" content="Athlomedは、SOAP・測定・傷害・リハビリ・コンディションなど、スポーツ現場に分散する選手データを一元管理するアスリートデータプラットフォームです。アスレティックトレーナー、理学療法士、S&Cコーチ、スポーツドクターのために。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#0F172A;font-family:"Noto Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#2563EB;text-decoration:none}
+a:hover{color:#1D4ED8}
+:focus-visible{outline:2px solid #2563EB;outline-offset:3px;border-radius:4px}
+[data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+[data-reveal].is-in{opacity:1;transform:none}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes pulseDot{0%,100%{opacity:.35}50%{opacity:1}}
+header nav a,header a,header button{white-space:nowrap}
+@media (max-width:1080px){
+[data-desk]{display:none!important}
+[data-mob]{display:flex!important}
+[data-hero-h1]{font-size:40px!important;letter-spacing:-.02em!important}
+[data-sec-h2]{font-size:28px!important}
+[data-pad]{padding-left:20px!important;padding-right:20px!important}
+[data-secpad]{padding-top:72px!important;padding-bottom:72px!important}
+}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid #E2EBF6">
+  <div data-pad style="max-width:1200px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#0F172A" aria-label="Athlomed ホーム">
+      <img src="assets/athlome-mark.png" alt="Athlomed" style="width:32px;height:32px;object-fit:contain;display:block">
+      <span style="font-weight:700;font-size:19px;letter-spacing:-.01em">Athlomed</span>
+    </a>
+    <nav data-desk aria-label="メインナビゲーション" style="display:flex;align-items:center;gap:28px">
+      <a href="#problem" style="color:#334155;font-size:14px;font-weight:500">課題</a>
+      <a href="#product" style="color:#334155;font-size:14px;font-weight:500">機能</a>
+      <a href="#connect" style="color:#334155;font-size:14px;font-weight:500">データ連携</a>
+      <a href="#accounts" style="color:#334155;font-size:14px;font-weight:500">アカウント</a>
+      <a href="#why" style="color:#334155;font-size:14px;font-weight:500">選ばれる理由</a>
+      <a href="#pricing" style="color:#334155;font-size:14px;font-weight:500">料金</a>
+    </nav>
+    <div data-desk style="display:flex;align-items:center;gap:12px">
+      <button type="button" onClick="{{ toggleLang }}" aria-label="Switch language" style="cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:700;color:#334155" style-hover="background:#F0F7FF;color:#2563EB">
+        <span style="{{ jaStyle }}">JA</span><span style="color:#CBD5E1;font-weight:400">/</span><span style="{{ enStyle }}">EN</span>
+      </button>
+      <a href="#cta" style="color:#334155;font-size:14px;font-weight:600;padding:10px 14px;border-radius:8px" style-hover="background:#F0F7FF;color:#2563EB">ログイン</a>
+      <a href="#cta" style="background:#2563EB;color:#fff;font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;box-shadow:0 1px 2px rgba(37,99,235,.35)" style-hover="background:#1D4ED8;color:#fff">ウェイティングリスト</a>
+    </div>
+    <button data-mob type="button" onClick="{{ toggleLang }}" aria-label="Switch language" style="display:none;align-items:center;justify-content:center;margin-left:auto;width:auto;height:44px;padding:0 12px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;color:#334155;gap:5px">
+      <span style="{{ jaStyle }}">JA</span><span style="color:#CBD5E1;font-weight:400">/</span><span style="{{ enStyle }}">EN</span>
+    </button>
+    <button data-mob type="button" onClick="{{ toggleMenu }}" aria-label="メニューを開く" aria-expanded="{{ menuOpen }}" style="display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #E2EBF6;background:#fff;border-radius:8px;cursor:pointer;flex-direction:column;gap:5px">
+      <span style="width:18px;height:2px;background:#0F172A;border-radius:2px;display:block"></span>
+      <span style="width:18px;height:2px;background:#0F172A;border-radius:2px;display:block"></span>
+    </button>
+  </div>
+  <sc-if value="{{ menuOpen }}">
+    <div style="border-top:1px solid #E2EBF6;background:#fff;padding:16px 20px 24px;display:flex;flex-direction:column;gap:4px">
+      <a href="#problem" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">課題</a>
+      <a href="#product" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">機能</a>
+      <a href="#connect" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">データ連携</a>
+      <a href="#accounts" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">アカウント</a>
+      <a href="#why" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">選ばれる理由</a>
+      <a href="#pricing" onClick="{{ closeMenu }}" style="color:#0F172A;font-size:16px;font-weight:500;padding:14px 4px;border-bottom:1px solid #F1F5F9">料金</a>
+      <a href="#cta" onClick="{{ closeMenu }}" style="margin-top:16px;background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:15px;border-radius:8px;text-align:center">ウェイティングリストに登録</a>
+    </div>
+  </sc-if>
+</header>
+
+<main id="top">
+
+<section data-secpad data-pad style="position:relative;padding:96px 32px 0;background:linear-gradient(180deg,#F0F7FF 0%,#F7FBFF 55%,#FFFFFF 100%);border-bottom:1px solid #E2EBF6;overflow:hidden">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid #DBE7F8;background:#fff;border-radius:999px;font-size:12.5px;font-weight:500;color:#334155;margin-bottom:28px">
+      <span style="width:6px;height:6px;border-radius:50%;background:#0EA5E9;animation:pulseDot 2.4s ease-in-out infinite;display:block"></span>
+      Athlete Life Log Platform — MVP 提供開始
+    </div>
+    <h1 data-hero-h1 style="margin:0;font-size:66px;line-height:1.18;font-weight:900;letter-spacing:-.035em;color:#0F172A;text-wrap:balance">選手のすべてを、<br>ひとつにつなぐ。</h1>
+    <p style="margin:26px auto 0;max-width:640px;font-size:17px;line-height:1.9;color:#334155;text-wrap:pretty">SOAP、測定、傷害、リハビリ、コンディション。<br>スポーツ現場に分散する選手データを、ひとつのプラットフォームへ。</p>
+    <div style="margin-top:38px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="#cta" style="background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:16px 30px;border-radius:10px;box-shadow:0 6px 20px -6px rgba(37,99,235,.55)" style-hover="background:#1D4ED8;color:#fff;transform:translateY(-1px)">ウェイティングリストに登録</a>
+      <a href="#product" style="background:#fff;color:#0F172A;font-size:15px;font-weight:700;padding:16px 26px;border-radius:10px;border:1px solid #D8E4F5" style-hover="background:#F0F7FF;color:#0F172A">Athlomedを見る</a>
+    </div>
+    <p style="margin:20px 0 0;font-size:12.5px;color:#64748B">提供準備中 ・ ご登録は無料、順番にご案内します</p>
+  </div>
+
+  <div style="max-width:1160px;margin:60px auto 0;padding-bottom:96px;animation:heroIn 1s cubic-bezier(.16,1,.3,1) both .15s">
+    <div style="border-radius:16px;border:1px solid #DBE7F8;background:#fff;box-shadow:0 40px 80px -40px rgba(15,23,42,.35),0 2px 8px rgba(15,23,42,.06);overflow:hidden">
+      <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #EEF3FA;background:#FBFDFF">
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#E2EBF6;display:block"></span>
+        <span style="margin-left:12px;font-family:'Roboto Mono',monospace;font-size:11.5px;color:#94A3B8">app.athlome.jp/dashboard</span>
+      </div>
+      <div style="display:flex;min-height:520px;background:#F7FAFE">
+        <aside style="width:200px;flex:none;background:#0F172A;padding:18px 12px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:9px;padding:6px 8px 20px">
+            <img src="assets/athlome-mark.png" alt="" style="width:22px;height:22px;object-fit:contain;display:block;filter:brightness(1.35)">
+            <span style="color:#fff;font-weight:700;font-size:14px">Athlomed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;background:#2563EB;color:#fff;font-size:12.5px;font-weight:500">ダッシュボード</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">選手</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">チーム</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">SOAP</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">測定</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">傷害</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">リハビリ</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;color:#94A3B8;font-size:12.5px">コンディション</div>
+          <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:10px 8px;border-top:1px solid rgba(255,255,255,.08)">
+            <span style="width:26px;height:26px;border-radius:50%;background:#334155;display:block"></span>
+            <span style="color:#E2E8F0;font-size:12px">山田 太郎 <span style="color:#64748B">AT</span></span>
+          </div>
+        </aside>
+        <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <span style="font-size:14px;font-weight:700;color:#0F172A">ダッシュボード</span>
+            <div style="display:flex;gap:8px">
+              <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:7px 11px">2026/08/01 - 2026/08/08</span>
+              <span style="font-size:11px;color:#334155;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:7px 11px">カスタマイズ</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">選手数</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">28</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+2 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">SOAP記録</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">18</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+5 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">測定記録</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">42</div>
+              <div style="font-size:10.5px;color:#0EA5E9;margin-top:6px">+8 今週</div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px">
+              <div style="font-size:11px;color:#64748B;margin-bottom:8px">傷害中の選手</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#0F172A;line-height:1">5</div>
+              <div style="font-size:10.5px;color:#991B1B;margin-top:6px">+1 今週</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                <span style="font-size:12.5px;font-weight:700;color:#0F172A">コンディションアラート</span>
+                <span style="font-size:10.5px;color:#991B1B;background:#FEE2E2;border-radius:999px;padding:3px 9px">5件</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">鈴木 大輝</span>
+                  <span style="font-size:10px;color:#991B1B;background:#FEE2E2;border-radius:5px;padding:3px 7px">コンディション低下</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">田中 翔太</span>
+                  <span style="font-size:10px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 7px">疲労蓄積</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">佐藤 陸</span>
+                  <span style="font-size:10px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 7px">睡眠不足</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="width:24px;height:24px;border-radius:50%;background:#E2EBF6;flex:none;display:block"></span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">髙橋 悠斗</span>
+                  <span style="font-size:10px;color:#991B1B;background:#FEE2E2;border-radius:5px;padding:3px 7px">痛みの訴え</span>
+                </div>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">最近のSOAP記録</div>
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/08</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">鈴木 大輝 — 右足関節捻挫</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/08</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">田中 翔太 — 腰部違和感</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/07</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">佐藤 陸 — 練習後ケア</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Roboto Mono',monospace;font-size:10.5px;color:#94A3B8;width:38px;flex:none">8/07</span>
+                  <span style="font-size:12px;color:#0F172A;flex:1">渡辺 海斗 — 復帰後評価</span>
+                  <span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700">S</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">今週の測定実施状況</div>
+              <div style="display:flex;align-items:center;gap:16px">
+                <div style="width:84px;height:84px;border-radius:50%;flex:none;background:conic-gradient(#2563EB 0 75%,#E8F0FC 75% 100%);display:flex;align-items:center;justify-content:center">
+                  <div style="width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Roboto Mono',monospace;font-size:15px;font-weight:500;color:#0F172A">75%</div>
+                </div>
+                <div style="font-size:11.5px;color:#64748B;line-height:2">21 / 28 名が実施済み<br><span style="color:#0F172A">未実施 7 名</span></div>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+              <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">傷害ステータス</div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:block"></span>治療中<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">5</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#0EA5E9;display:block"></span>リハビリ中<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">3</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#A5B4FC;display:block"></span>経過観察<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">2</span></div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#334155"><span style="width:8px;height:8px;border-radius:50%;background:#86EFAC;display:block"></span>復帰済み<span style="margin-left:auto;font-family:'Roboto Mono',monospace;color:#0F172A">18</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin:22px 0 0;text-align:center;font-size:12px;color:#94A3B8">※ 画面はプロトタイプのイメージです</p>
+  </div>
+</section>
+
+<section data-secpad data-pad style="padding:56px 32px;border-bottom:1px solid #E2EBF6;background:#fff">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 40px">
+    <span style="font-size:12px;color:#94A3B8;font-weight:500;letter-spacing:.06em">FOR</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">アスレティックトレーナー</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">理学療法士</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">S&amp;Cコーチ</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">スポーツドクター</span>
+    <span style="font-size:14px;color:#334155;font-weight:500">柔道整復師</span>
+  </div>
+</section>
+
+<section id="problem" data-secpad data-pad style="padding:120px 32px;background:#F7FAFE;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:680px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">PROBLEM</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.4;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">選手の情報は、現場の<br>あちこちに散らばっている。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">紙のカルテ、Excel、チャット、担当者の記憶。記録は残っていても、必要なときに、必要な形で取り出せません。</p>
+    </div>
+    <div data-reveal style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">01</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">情報が複数の場所に分散する</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">紙・Excel・チャット・個人のメモ。同じ選手の情報が、別々の場所に別々の形式で残る。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">02</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">過去の記録を探すのに時間がかかる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">「去年の同じ部位の受傷はいつだったか」を、その場で確認できない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">03</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">記録と測定がつながらない</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">カルテとROM・筋力の測定値が別管理で、経過を並べて判断できない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">04</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">傷害とリハビリが分断される</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">受傷からRTPまでの経過が一本の線にならず、判断の根拠が残らない。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:14px;padding:26px 24px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#94A3B8;margin-bottom:14px">05</div>
+        <div style="font-size:16px;font-weight:700;color:#0F172A;margin-bottom:10px">担当者が変わると引き継げない</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">スタッフの異動・卒業とともに、蓄積された文脈が失われる。</p>
+      </div>
+      <div style="background:#0F172A;border:1px solid #0F172A;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.7;margin-bottom:10px">Athlomedは、それを<br>ひとつにまとめます。</div>
+        <a href="#product" style="color:#7DD3FC;font-size:13.5px;font-weight:600" style-hover="color:#BAE6FD">解決する仕組みを見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="product" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1160px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:700px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">SOLUTION</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.4;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">6つのモジュールが、<br>ひとりの選手に集約される。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155">それぞれ独立したツールではなく、同じデータ構造の上に成り立つひとつのプラットフォームです。</p>
+    </div>
+
+    <div data-reveal style="margin-top:52px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
+        <button type="button" onClick="{{ t.onClick }}" aria-pressed="{{ t.active }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <div data-reveal style="margin-top:28px;border-radius:16px;border:1px solid #DBE7F8;background:#fff;box-shadow:0 30px 60px -40px rgba(15,23,42,.3);overflow:hidden">
+      <div style="display:flex;min-height:520px;background:#F7FAFE">
+        <aside data-desk style="width:180px;flex:none;background:#0F172A;padding:18px 12px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:9px;padding:6px 8px 20px">
+            <img src="assets/athlome-mark.png" alt="" style="width:22px;height:22px;object-fit:contain;display:block;filter:brightness(1.35)">
+            <span style="color:#fff;font-weight:700;font-size:14px">Athlomed</span>
+          </div>
+          <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="8">
+            <div style="{{ n.style }}">{{ n.label }}</div>
+          </sc-for>
+        </aside>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+          <div style="padding:13px 20px;border-bottom:1px solid #E9F0F9;background:#fff;display:flex;align-items:center;gap:10px;font-size:11.5px;color:#64748B">
+            <span>選手一覧</span><span style="color:#CBD5E1">/</span><span style="color:#0F172A;font-weight:500">{{ crumb }}</span>
+          </div>
+
+          <sc-if value="{{ isProfile }}">
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                  <span style="width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,#E2EBF6,#CBD5E1);flex:none;display:block"></span>
+                  <div>
+                    <div style="font-size:19px;font-weight:700;color:#0F172A">鈴木 大輝</div>
+                    <div style="font-size:11px;color:#94A3B8;margin:3px 0 8px">すずき だいき</div>
+                    <div style="display:flex;gap:6px">
+                      <span style="font-size:10px;font-weight:700;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:3px 8px">FW</span>
+                      <span style="font-family:'Roboto Mono',monospace;font-size:10px;color:#334155;background:#F1F5F9;border-radius:5px;padding:3px 8px">#10</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:11px">
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">生年月日</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">2002/04/15</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">身長 / 体重</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">176cm / 72kg</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">所属チーム</span><span style="color:#0F172A">トップチーム</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">利き足</span><span style="color:#0F172A">右</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:88px;flex:none">ステータス</span><span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:2px 8px">Partial</span></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                    <span style="font-size:12.5px;font-weight:700;color:#0F172A">最新のコンディション</span>
+                    <span style="font-size:10.5px;color:#166534;background:#DCFCE7;border-radius:5px;padding:3px 8px;font-weight:700">良い</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">疲労感</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 40% 0 0;background:#2563EB;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">3/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">睡眠の質</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 20% 0 0;background:#2563EB;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">4/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">筋肉痛</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 60% 0 0;background:#0EA5E9;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">2/5</span></div>
+                    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;color:#64748B;width:56px">ストレス</span><span style="flex:1;height:5px;border-radius:3px;background:#EEF3FA;display:block;position:relative;overflow:hidden"><span style="position:absolute;inset:0 60% 0 0;background:#0EA5E9;display:block"></span></span><span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#334155">2/5</span></div>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="font-size:12.5px;font-weight:700;color:#0F172A;margin-bottom:14px">今週のアクティビティ</div>
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">SOAP記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">3回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">測定記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">2回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">トレーニング<span style="font-family:'Roboto Mono',monospace;color:#0F172A">5回</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;color:#334155">傷害の記録<span style="font-family:'Roboto Mono',monospace;color:#0F172A">1件</span></div>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+                  <span style="font-size:12.5px;font-weight:700;color:#0F172A">直近の傷害</span>
+                  <span style="font-size:12px;color:#334155">右足関節捻挫</span>
+                  <span style="font-size:10.5px;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 8px;font-weight:700">リハビリ中</span>
+                  <span style="margin-left:auto;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B">受傷日 2026/07/10</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isTimeline }}">
+            <div style="padding:20px">
+              <div style="display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap">
+                <span style="font-size:11px;font-weight:700;color:#fff;background:#2563EB;border-radius:6px;padding:6px 12px">すべて</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">SOAP</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">測定</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">傷害</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">リハビリ</span>
+                <span style="font-size:11px;color:#334155;background:#fff;border:1px solid #E2EBF6;border-radius:6px;padding:6px 12px">コンディション</span>
+              </div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:#94A3B8;margin-bottom:12px">2026年8月</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ timeline }}" as="e" hint-placeholder-count="7">
+                  <div style="display:flex;align-items:stretch;gap:14px">
+                    <div style="width:56px;flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;padding-top:14px">{{ e.date }}</div>
+                    <div style="width:1px;background:#E2EBF6;position:relative;flex:none">
+                      <span style="{{ e.dotStyle }}"></span>
+                    </div>
+                    <div style="flex:1;background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+                      <span style="{{ e.tagStyle }}">{{ e.tag }}</span>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">{{ e.title }}</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:3px">{{ e.desc }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isSoap }}">
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">S</span><span style="font-size:12px;font-weight:700;color:#0F172A">Subjective（主観的情報）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝に違和感あり。走るときに軽い痛みを感じる。特に方向転換時に違和感が強い。</p>
+                  <div style="text-align:right;font-family:'Roboto Mono',monospace;font-size:10px;color:#CBD5E1;margin-top:8px">46 / 1000</div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">O</span><span style="font-size:12px;font-weight:700;color:#0F172A">Objective（客観的情報）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝外側に圧痛あり。可動域：正常。MMT：5/5。腫脹：軽度。</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">A</span><span style="font-size:12px;font-weight:700;color:#0F172A">Assessment（評価）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">右膝外側のオーバーユースによる炎症の可能性。靱帯損傷の可能性は低い。</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="width:18px;height:18px;border-radius:5px;background:#EFF6FF;color:#2563EB;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">P</span><span style="font-size:12px;font-weight:700;color:#0F172A">Plan（計画）</span></div>
+                  <p style="margin:0;font-size:12px;line-height:1.9;color:#334155">アイシング、ストレッチ、負荷調整。明日再評価。</p>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:14px 16px">
+                  <div style="font-size:11px;color:#64748B;margin-bottom:7px">記録日</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-family:'Roboto Mono',monospace;font-size:12px;color:#0F172A">2026/08/08</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">記録者</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-size:12px;color:#0F172A">山田 太郎（AT）</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">カテゴリ</div>
+                  <div style="border:1px solid #E2EBF6;border-radius:7px;padding:9px 11px;font-size:12px;color:#0F172A">トレーニング後</div>
+                  <div style="font-size:11px;color:#64748B;margin:14px 0 7px">タグ</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <span style="font-size:11px;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 9px">右膝</span>
+                    <span style="font-size:11px;color:#2563EB;background:#EFF6FF;border-radius:5px;padding:4px 9px">違和感</span>
+                    <span style="font-size:11px;color:#94A3B8;border:1px dashed #CBD5E1;border-radius:5px;padding:4px 9px">+ タグを追加</span>
+                  </div>
+                </div>
+                <div style="background:#EFF6FF;border:1px solid #DBE7F8;border-radius:10px;padding:14px 16px">
+                  <div style="font-size:11.5px;font-weight:700;color:#1D4ED8;margin-bottom:6px">この記録は自動的に連携されます</div>
+                  <p style="margin:0;font-size:11.5px;line-height:1.9;color:#334155">選手プロフィール / タイムライン / 傷害「右足関節捻挫」の経過に紐づきます。</p>
+                </div>
+                <div style="display:flex;gap:8px;justify-content:flex-end">
+                  <span style="font-size:12px;color:#334155;border:1px solid #E2EBF6;background:#fff;border-radius:7px;padding:9px 16px">キャンセル</span>
+                  <span style="font-size:12px;font-weight:700;color:#fff;background:#2563EB;border-radius:7px;padding:9px 20px">保存</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isMeasure }}">
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">体組成 ・ 前回比</div>
+                <div style="display:flex;flex-direction:column">
+                  <div style="display:flex;font-size:10.5px;color:#94A3B8;padding-bottom:9px;border-bottom:1px solid #E2EBF6"><span style="flex:1">項目</span><span style="width:70px;text-align:right">測定値</span><span style="width:70px;text-align:right">前回比</span></div>
+                  <sc-for list="{{ measures }}" as="m" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:center;font-size:12px;padding:11px 0;border-bottom:1px solid #F1F5F9">
+                      <span style="flex:1;color:#334155">{{ m.name }}</span>
+                      <span style="width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:#0F172A">{{ m.value }}</span>
+                      <span style="{{ m.deltaStyle }}">{{ m.delta }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px">
+                    <span style="font-size:13px;font-weight:700;color:#0F172A">膝関節屈曲 ROM 推移</span>
+                    <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B">deg</span>
+                  </div>
+                  <div style="display:flex;align-items:flex-end;gap:10px;height:140px;padding-bottom:22px;position:relative;border-bottom:1px solid #E2EBF6">
+                    <sc-for list="{{ bars }}" as="b" hint-placeholder-count="7">
+                      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9.5px;color:#64748B">{{ b.value }}</span>
+                        <span style="{{ b.barStyle }}"></span>
+                        <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:#94A3B8;position:absolute;bottom:4px">{{ b.label }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px"><span style="font-size:13px;font-weight:700;color:#0F172A">測定メモ</span><span style="display:flex;gap:6px"><span style="font-size:10.5px;font-weight:700;color:#334155;border:1px solid #E2EBF6;border-radius:6px;padding:5px 10px">PDF出力</span><span style="font-size:10.5px;font-weight:700;color:#334155;border:1px solid #E2EBF6;border-radius:6px;padding:5px 10px">Excel出力</span></span></div>
+                  <p style="margin:0 0 12px;font-size:12px;line-height:1.9;color:#334155">コンディション良好。筋肉量が増加傾向。健側比 92%、次回で復帰判定の再評価を実施予定。</p>
+                  <div style="background:#EFF6FF;border:1px solid #DBE7F8;border-radius:9px;padding:12px 14px;font-size:11.5px;line-height:1.9;color:#334155"><span style="font-weight:700;color:#1D4ED8">SOAPへ自動反映：</span>膝屈曲ROM +6°、健側比 92% がSOAPの「A（評価）」に追記されます。</div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isInjury }}">
+            <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start">
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+                  <span style="font-size:16px;font-weight:700;color:#0F172A">右足関節捻挫</span>
+                  <span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 8px">リハビリ中</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">受傷日</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">2026/07/10</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">受傷状況</span><span style="color:#0F172A;flex:1;line-height:1.8">トレーニング中の着地時に内反</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">重症度</span><span style="color:#0F172A">Grade 2</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">部位</span><span style="color:#0F172A">右足関節（外側）</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">ICD-10コード</span><span style="color:#0F172A;font-family:'Roboto Mono',monospace">S93.4</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">担当者</span><span style="color:#0F172A">山田 太郎（AT）</span></div>
+                  <div style="display:flex;font-size:12px"><span style="color:#64748B;width:96px;flex:none">RTP予定</span><span style="color:#2563EB;font-family:'Roboto Mono',monospace;font-weight:500">2026/08/25</span></div>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:20px">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">経過</div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <sc-for list="{{ progress }}" as="p" hint-placeholder-count="5">
+                    <div style="display:flex;gap:12px">
+                      <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#64748B;width:42px;flex:none;padding-top:1px">{{ p.date }}</span>
+                      <span style="{{ p.dotStyle }}"></span>
+                      <div style="flex:1">
+                        <div style="font-size:12.5px;font-weight:700;color:#0F172A">{{ p.title }}</div>
+                        <div style="font-size:11.5px;color:#64748B;margin-top:4px;line-height:1.8">{{ p.desc }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isDashboard }}">
+            <div style="padding:20px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">本日のセッション</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;line-height:1">12</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Out</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#991B1B;line-height:1">3</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Partial</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#92400E;line-height:1">5</div></div>
+                <div style="background:#fff;border:1px solid #E2EBF6;border-radius:10px;padding:16px"><div style="font-size:11px;color:#64748B;margin-bottom:8px">Full</div><div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#166534;line-height:1">20</div></div>
+              </div>
+              <div style="background:#fff;border:1px solid #E2EBF6;border-radius:12px;padding:18px;overflow-x:auto">
+                <div style="font-size:13px;font-weight:700;color:#0F172A;margin-bottom:16px">コンディションマトリクス（今週）</div>
+                <div style="min-width:520px;display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;gap:8px;align-items:center">
+                    <span style="width:96px;flex:none"></span>
+                    <sc-for list="{{ weekDays }}" as="d" hint-placeholder-count="7"><span style="flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10px;color:#94A3B8">{{ d }}</span></sc-for>
+                  </div>
+                  <sc-for list="{{ matrix }}" as="row" hint-placeholder-count="5">
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span style="width:96px;flex:none;font-size:11.5px;color:#334155">{{ row.name }}</span>
+                      <sc-for list="{{ row.cells }}" as="c" hint-placeholder-count="7">
+                        <span style="{{ c.style }}">{{ c.v }}</span>
+                      </sc-for>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">すべての記録が、選手に紐づく</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">SOAP・測定・傷害・リハビリは、独立したフォームではなく同じ選手レコードの一部として保存されます。</p>
+      </div>
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">入力した数値が、そのまま評価になる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">測定記録は自動でグラフ化され、その結果はSOAPの「A（評価）」へ自動反映。転記の手間なく、経過が評価につながります。</p>
+      </div>
+      <div style="border:1px solid #E2EBF6;border-radius:12px;padding:22px 24px">
+        <div style="font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px">共有パスワードで引き継げる</div>
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#64748B">チームごとの共有パスワードを渡すだけで、他のトレーナーと同じカルテを扱えます。担当が交代する日も情報が途切れません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="connect" data-secpad data-pad style="padding:120px 32px;background:#0F172A;color:#fff">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal style="max-width:660px">
+      <div style="font-size:12px;font-weight:700;color:#7DD3FC;letter-spacing:.1em;margin-bottom:16px">DATA CONNECTION</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#fff;text-wrap:balance">記録を、データへ。<br>データを、次の判断へ。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#94A3B8;text-wrap:pretty">受傷から復帰まで、現場で発生するすべての情報がひとつの流れとしてつながります。</p>
+    </div>
+    <div data-reveal style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+      <sc-for list="{{ chain }}" as="c" hint-placeholder-count="7">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#7DD3FC">{{ c.no }}</span>
+          <span style="font-size:15px;font-weight:700;color:#fff">{{ c.title }}</span>
+          <span style="font-size:12px;line-height:1.8;color:#94A3B8">{{ c.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div data-reveal style="margin-top:28px;padding:24px 26px;border-radius:12px;background:rgba(37,99,235,.12);border:1px solid rgba(125,211,252,.24);font-size:15px;line-height:1.9;color:#E2E8F0">
+      それぞれの記録は、選手というひとつの軸の上に時系列で積み上がります。<span style="color:#fff;font-weight:700">選手の過去を、未来につなげる。</span>
+    </div>
+  </div>
+</section>
+
+<section id="why" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:640px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">WHY ATHLOME</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">記録アプリではなく、<br>データ基盤であること。</h2>
+    </div>
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#E2EBF6;border:1px solid #E2EBF6;border-radius:14px;overflow:hidden">
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Athlete-centric</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">すべての情報が「選手」を中心に整理されます。部署でも書式でもなく、選手が主語です。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Longitudinal</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">高校から大学、プロへ。年をまたいでデータが蓄積され、キャリアを通じた記録になります。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Structured</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">重要な情報は自由記述のまま埋もれず、検索・比較・集計できる構造化データになります。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Connected</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">SOAP・測定・傷害・タイムラインが相互に参照され、判断の根拠がひと目で追えます。</p>
+      </div>
+      <div style="background:#fff;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Portable</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">担当するチームが増えても減っても、カルテはあなたのアカウントに残り続けます。</p>
+      </div>
+      <div style="background:#F7FAFE;padding:32px 28px">
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:12px">Secure</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">アカウント種別ごとの権限とアクセス履歴により、医療情報として扱うべきデータを保護します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="accounts" data-secpad data-pad style="padding:120px 32px;background:#F7FAFE;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1120px;margin:0 auto">
+    <div data-reveal style="max-width:660px">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">ACCOUNTS &amp; SHARING</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A;text-wrap:balance">カルテはあなたのもの。<br>共有範囲は、あなたが決める。</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">Athlomedの管理者はメディカルスタッフです。アカウント種別ごとにできることを明確に分け、選手・スタッフ・他のトレーナーへ必要な範囲だけを開きます。</p>
+    </div>
+
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:stretch">
+      <div style="background:#0F172A;border:1px solid #0F172A;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#0F172A;background:#7DD3FC;border-radius:5px;padding:3px 9px">管理者</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:10px">メディカルスタッフ</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#94A3B8">AT・PT・柔道整復師・スポーツドクターなど、現場で記録を書く人のためのアカウント。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#E2E8F0;line-height:1.7">
+          <div>カルテの作成・編集・閲覧（すべての権限）</div>
+          <div>複数チームのカルテをチームごとに作成・管理</div>
+          <div>記録テンプレートを自分で追加・編集</div>
+          <div>アカウント発行と共有範囲の設定</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#166534;background:#DCFCE7;border-radius:5px;padding:3px 9px">入力＋閲覧</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:10px">選手アカウント</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#64748B">選手本人が、毎日のコンディションを自分で入力するためのアカウント。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#334155;line-height:1.7">
+          <div>日々のコンディションチェックの入力</div>
+          <div>自分の記録の閲覧</div>
+          <div>それ以外の項目は閲覧のみ（編集不可）</div>
+          <div>他の選手の情報にはアクセス不可</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:30px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <span style="font-size:10.5px;font-weight:700;color:#92400E;background:#FEF9C3;border-radius:5px;padding:3px 9px">閲覧のみ</span>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:10px">スタッフアカウント</div>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.9;color:#64748B">監督・コーチなど、選手の状態を把握する必要があるチームスタッフ向け。</p>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#334155;line-height:1.7">
+          <div>選手のコンディション・出場可否の閲覧</div>
+          <div>チーム全体の状況の把握</div>
+          <div>記録の入力・編集はできません</div>
+          <div>公開範囲はメディカルスタッフが設定</div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div style="background:#fff;border:1px solid #DBE7F8;border-radius:16px;padding:30px 28px">
+        <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.08em;margin-bottom:14px">PASSWORD SHARING</div>
+        <div style="font-size:18px;font-weight:700;color:#0F172A;margin-bottom:12px">パスワードで、チームのカルテを他のトレーナーと共有</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B;text-wrap:pretty">チームごとに発行される共有パスワードを渡すだけで、他のトレーナーが同じチームのカルテにアクセスできます。帯同が交代する日も、複数人で担当する現場も、情報が途切れません。共有はいつでも停止でき、アクセス履歴も残ります。</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E2EBF6;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+        <div style="font-size:11.5px;color:#64748B">チーム共有パスワード</div>
+        <div style="display:flex;align-items:center;gap:10px;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 16px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:17px;letter-spacing:.14em;color:#0F172A">ATH-7K2M-9QD4</span>
+          <span style="margin-left:auto;font-size:11.5px;font-weight:700;color:#2563EB">コピー</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#64748B">
+          <span style="width:7px;height:7px;border-radius:50%;background:#22C55E;display:block"></span>
+          現在 2名のトレーナーが共有中 ・ 有効期限 30日
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" data-secpad data-pad style="padding:120px 32px;background:#fff;border-bottom:1px solid #E2EBF6">
+  <div style="max-width:1080px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:640px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">PRICING</div>
+      <h2 data-sec-h2 style="margin:0;font-size:40px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#0F172A">料金プラン</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:2;color:#334155">Athlomedは、メディカルスタッフ個人がご契約いただくサービスです。チーム単位・組織単位の契約はありません。価格は1名あたりの月額です。</p>
+    </div>
+    <div data-reveal style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch;max-width:760px;margin-left:auto;margin-right:auto">
+      <div style="border:1px solid #E2EBF6;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="font-size:16px;font-weight:700;color:#0F172A">Free</div>
+        <p style="margin:8px 0 20px;font-size:13px;line-height:1.8;color:#64748B">まず1チームから試したい方へ</p>
+        <div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;padding-bottom:22px;border-bottom:1px solid #E2EBF6">$0<span style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#64748B;font-weight:400"> / 月</span></div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin:22px 0 26px;font-size:13px;color:#334155;line-height:1.7">
+          <div>チーム 1つ ・ 選手 5名まで</div>
+          <div>SOAP・測定・傷害・リハビリの記録</div>
+          <div>タイムライン</div>
+          <div>測定記録の自動グラフ化</div>
+          <div>選手アカウント（コンディション入力）</div>
+        </div>
+        <a href="#cta" style="margin-top:auto;text-align:center;border:1px solid #D8E4F5;color:#0F172A;font-size:14px;font-weight:700;padding:13px;border-radius:9px" style-hover="background:#F0F7FF;color:#0F172A">ウェイティングリストに登録</a>
+      </div>
+      <div style="border:1.5px solid #2563EB;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;box-shadow:0 20px 50px -30px rgba(37,99,235,.6);position:relative">
+        <span style="position:absolute;top:-11px;left:28px;background:#2563EB;color:#fff;font-size:11px;font-weight:700;border-radius:999px;padding:5px 12px">おすすめ</span>
+        <div style="font-size:16px;font-weight:700;color:#0F172A">Pro</div>
+        <p style="margin:8px 0 20px;font-size:13px;line-height:1.8;color:#64748B">複数チームを担当するメディカルスタッフへ</p>
+        <div style="font-family:'Roboto Mono',monospace;font-size:26px;color:#0F172A;padding-bottom:22px;border-bottom:1px solid #E2EBF6">{{ proPrice }}<span style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#64748B;font-weight:400"> / 月・1名</span><div style="font-family:'Noto Sans JP',sans-serif;font-size:11.5px;color:#94A3B8;font-weight:400;margin-top:8px">{{ proPriceNote }}</div></div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin:22px 0 26px;font-size:13px;color:#334155;line-height:1.7">
+          <div>Freeのすべての機能</div>
+          <div>チーム数・選手数 無制限</div>
+          <div>記録テンプレートの追加・編集</div>
+          <div>測定結果のSOAP「A」への自動反映</div>
+          <div>グラフ・結果表のPDF出力 / Excel出力</div>
+          <div>パスワードによるカルテ共有</div>
+          <div>スタッフアカウント（閲覧のみ）の発行</div>
+          <div>メールサポート</div>
+        </div>
+        <a href="#cta" style="margin-top:auto;text-align:center;background:#2563EB;color:#fff;font-size:14px;font-weight:700;padding:13px;border-radius:9px" style-hover="background:#1D4ED8;color:#fff">ウェイティングリストに登録</a>
+      </div>
+    </div>
+    <p data-reveal style="margin:24px 0 0;text-align:center;font-size:12.5px;color:#94A3B8">選手アカウント・スタッフアカウントの発行に追加費用はかかりません。</p>
+  </div>
+</section>
+
+<section id="cta" data-secpad data-pad style="padding:120px 32px;background:linear-gradient(180deg,#FFFFFF,#F0F7FF)">
+  <div data-reveal style="max-width:720px;margin:0 auto;text-align:center">
+    <div style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:.1em;margin-bottom:16px">WAITING LIST</div>
+    <h2 data-sec-h2 style="margin:0;font-size:44px;line-height:1.4;font-weight:900;letter-spacing:-.035em;color:#0F172A;text-wrap:balance">選手データを、次のステージへ。</h2>
+    <p style="margin:22px auto 0;max-width:560px;font-size:16px;line-height:2;color:#334155;text-wrap:pretty">Athlomedは現在、提供準備中です。ウェイティングリストにご登録いただいた方から順に、ご案内をお送りします。</p>
+
+    <sc-if value="{{ waitlistDone }}" hint-placeholder-val="{{ false }}">
+      <div style="margin:38px auto 0;max-width:520px;background:#fff;border:1px solid #DBE7F8;border-radius:14px;padding:32px 28px">
+        <div style="width:44px;height:44px;border-radius:50%;background:#DCFCE7;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#166534;font-size:20px;font-weight:700">✓</div>
+        <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:10px">ご登録ありがとうございます</div>
+        <p style="margin:0;font-size:13.5px;line-height:2;color:#64748B">提供開始のご案内を、ご登録のメールアドレスへお送りします。順番にご案内するため、しばらくお待ちください。</p>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ waitlistOpen }}" hint-placeholder-val="{{ true }}">
+      <form action="{{ formAction }}" method="post" onSubmit="{{ submitWaitlist }}" style="margin:38px auto 0;max-width:520px;background:#fff;border:1px solid #DBE7F8;border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px;text-align:left;box-shadow:0 24px 50px -34px rgba(15,23,42,.35)">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-email" style="font-size:12.5px;font-weight:700;color:#334155">メールアドレス</label>
+          <input id="wl-email" name="email" type="email" required="{{ true }}" placeholder="you@example.com" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-role" style="font-size:12.5px;font-weight:700;color:#334155">ご職種</label>
+          <select id="wl-role" name="role" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+            <option>アスレティックトレーナー</option>
+            <option>理学療法士</option>
+            <option>柔道整復師</option>
+            <option>S&amp;Cコーチ</option>
+            <option>スポーツドクター</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label for="wl-teams" style="font-size:12.5px;font-weight:700;color:#334155">担当しているチーム数</label>
+          <select id="wl-teams" name="teams" style="font-family:inherit;font-size:14px;color:#0F172A;border:1px solid #E2EBF6;background:#F7FAFE;border-radius:9px;padding:14px 15px;min-height:48px;width:100%">
+            <option>1チーム</option>
+            <option>2〜3チーム</option>
+            <option>4チーム以上</option>
+            <option>これから担当予定</option>
+          </select>
+        </div>
+        <button type="submit" style="cursor:pointer;font-family:inherit;background:#2563EB;color:#fff;font-size:15px;font-weight:700;padding:16px;border:none;border-radius:10px;min-height:52px;box-shadow:0 6px 20px -6px rgba(37,99,235,.55)" style-hover="background:#1D4ED8">{{ submitLabel }}</button>
+        <p style="margin:0;font-size:11.5px;line-height:1.8;color:#94A3B8">ご登録は無料です。提供開始のご案内以外の目的でメールアドレスを利用することはありません。</p>
+      </form>
+    </sc-if>
+  </div>
+</section>
+
+</main>
+
+<footer data-pad style="background:#0F172A;color:#94A3B8;padding:72px 32px 40px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px">
+      <div style="min-width:200px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <img src="assets/athlome-mark.png" alt="" style="width:28px;height:28px;object-fit:contain;display:block;filter:brightness(1.35)">
+          <span style="color:#fff;font-weight:700;font-size:17px">Athlomed</span>
+        </div>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#64748B">選手のすべてを、ひとつにつなぐ。<br>スポーツ現場のためのアスリートデータプラットフォーム。</p>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Product</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="#product" style="color:#94A3B8" style-hover="color:#fff">機能</a>
+          <a href="#connect" style="color:#94A3B8" style-hover="color:#fff">データ連携</a>
+          <a href="#accounts" style="color:#94A3B8" style-hover="color:#fff">アカウントと共有</a>
+          <a href="#pricing" style="color:#94A3B8" style-hover="color:#fff">料金プラン</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Company</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="#top" style="color:#94A3B8" style-hover="color:#fff">Athlomedについて</a>
+          <a href="#cta" style="color:#94A3B8" style-hover="color:#fff">ウェイティングリスト</a>
+          <a href="#why" style="color:#94A3B8" style-hover="color:#fff">選ばれる理由</a>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:12.5px;font-weight:700;margin-bottom:16px">Legal</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:13px">
+          <a href="#top" style="color:#94A3B8" style-hover="color:#fff">利用規約</a>
+          <a href="#top" style="color:#94A3B8" style-hover="color:#fff">プライバシーポリシー</a>
+          <a href="#top" style="color:#94A3B8" style-hover="color:#fff">セキュリティ</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:#64748B">
+      <span>© 2026 Athlomed</span>
+      <span>Athlete Life Log Platform</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;formspreeId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;{form_id}&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Waiting list&quot;}}">
+const DICT = {
+  "課題": "Problem", "機能": "Product", "データ連携": "Data", "アカウント": "Accounts", "選ばれる理由": "Why Athlomed", "料金": "Pricing",
+  "ログイン": "Log in", "ウェイティングリスト": "Waiting list", "ウェイティングリストに登録": "Join the waiting list",
+  "提供準備中 ・ ご登録は無料、順番にご案内します": "Launching soon · Free to join, invitations sent in order",
+  "Athlomedは現在、提供準備中です。ウェイティングリストにご登録いただいた方から順に、ご案内をお送りします。": "Athlomed is preparing for launch. We invite people in the order they join the waiting list.",
+  "メールアドレス": "Email address", "ご職種": "Your role", "担当しているチーム数": "Teams you cover",
+  "その他": "Other", "1チーム": "1 team", "2〜3チーム": "2–3 teams", "4チーム以上": "4 or more teams", "これから担当予定": "Starting soon",
+  "ご登録は無料です。提供開始のご案内以外の目的でメールアドレスを利用することはありません。": "Joining is free. We will only use your address to let you know when Athlomed opens.",
+  "ご登録ありがとうございます": "Thanks for joining", "提供開始のご案内を、ご登録のメールアドレスへお送りします。順番にご案内するため、しばらくお待ちください。": "We will email you when Athlomed opens. Invitations go out in order, so please bear with us.", "無料で始める": "Start for free", "Athlomedを見る": "See Athlomed", "Athlomedを始める": "Get started with Athlomed", "お問い合わせ": "Contact us",
+  "Athlete Life Log Platform — MVP 提供開始": "Athlete Life Log Platform — MVP now available",
+  "選手のすべてを、": "Everything about an athlete,", "ひとつにつなぐ。": "connected in one place.",
+  "SOAP、測定、傷害、リハビリ、コンディション。": "SOAP notes, measurements, injuries, rehab and daily condition.",
+  "スポーツ現場に分散する選手データを、ひとつのプラットフォームへ。": "All the athlete data scattered across your practice, on a single platform.",
+
+  "ダッシュボード": "Dashboard", "選手": "Athletes", "チーム": "Teams", "スケジュール": "Schedule", "測定": "Measurement", "傷害": "Injury",
+  "リハビリ": "Rehab", "コンディション": "Condition", "レポート": "Reports", "設定": "Settings",
+  "山田 太郎": "Taro Yamada", "カスタマイズ": "Customize", "選手数": "Athletes", "SOAP記録": "SOAP records", "測定記録": "Measurements",
+  "傷害中の選手": "Injured athletes", "+2 今週": "+2 this week", "+5 今週": "+5 this week", "+8 今週": "+8 this week", "+1 今週": "+1 this week",
+  "コンディションアラート": "Condition alerts", "5件": "5", "鈴木 大輝": "Daiki Suzuki", "田中 翔太": "Shota Tanaka", "佐藤 陸": "Riku Sato",
+  "髙橋 悠斗": "Yuto Takahashi", "渡辺 海斗": "Kaito Watanabe",
+  "コンディション低下": "Condition drop", "疲労蓄積": "Fatigue build-up", "睡眠不足": "Lack of sleep", "痛みの訴え": "Pain reported",
+  "最近のSOAP記録": "Recent SOAP records",
+  "鈴木 大輝 — 右足関節捻挫": "Daiki Suzuki — Right ankle sprain", "田中 翔太 — 腰部違和感": "Shota Tanaka — Lower back discomfort",
+  "佐藤 陸 — 練習後ケア": "Riku Sato — Post-practice care", "渡辺 海斗 — 復帰後評価": "Kaito Watanabe — Post-return assessment",
+  "今週の測定実施状況": "Measurements completed this week", "21 / 28 名が実施済み": "21 of 28 athletes completed", "未実施 7 名": "7 not yet completed",
+  "傷害ステータス": "Injury status", "治療中": "In treatment", "リハビリ中": "In rehab", "経過観察": "Monitoring", "復帰済み": "Returned",
+  "※ 画面はプロトタイプのイメージです": "* Screens shown are prototype images.",
+  "アスレティックトレーナー": "Athletic trainers", "理学療法士": "Physical therapists", "S&Cコーチ": "S&C coaches",
+  "スポーツドクター": "Sports physicians", "柔道整復師": "Judo therapists",
+  "選手の情報は、現場の": "Athlete information is scattered", "あちこちに散らばっている。": "all over the practice.",
+  "紙のカルテ、Excel、チャット、担当者の記憶。記録は残っていても、必要なときに、必要な形で取り出せません。": "Paper charts, spreadsheets, chat threads, and someone's memory. The records exist — but not in a form you can retrieve when you need them.",
+  "情報が複数の場所に分散する": "Information lives in too many places",
+  "紙・Excel・チャット・個人のメモ。同じ選手の情報が、別々の場所に別々の形式で残る。": "Paper, Excel, chat, personal notes. The same athlete's data ends up in different places in different formats.",
+  "過去の記録を探すのに時間がかかる": "Past records take too long to find",
+  "「去年の同じ部位の受傷はいつだったか」を、その場で確認できない。": "\"When did he injure the same area last season?\" can't be answered on the spot.",
+  "記録と測定がつながらない": "Notes and measurements don't connect",
+  "カルテとROM・筋力の測定値が別管理で、経過を並べて判断できない。": "Charts and ROM/strength data are managed separately, so progress can't be judged side by side.",
+  "傷害とリハビリが分断される": "Injury and rehab are disconnected",
+  "受傷からRTPまでの経過が一本の線にならず、判断の根拠が残らない。": "From injury to return to play, the story never forms one line — and the reasoning is lost.",
+  "担当者が変わると引き継げない": "Handovers lose the context",
+  "スタッフの異動・卒業とともに、蓄積された文脈が失われる。": "When staff change or students graduate, accumulated context disappears.",
+  "Athlomedは、それを": "Athlomed brings it", "ひとつにまとめます。": "all together.", "解決する仕組みを見る →": "See how it works →",
+  "6つのモジュールが、": "Six modules,", "ひとりの選手に集約される。": "converging on one athlete.",
+  "それぞれ独立したツールではなく、同じデータ構造の上に成り立つひとつのプラットフォームです。": "Not six separate tools — one platform built on a single shared data structure.",
+  "選手一覧": "Athletes", "選手プロフィール": "Athlete Profile", "タイムライン": "Timeline",
+  "鈴木 大輝 / タイムライン": "Daiki Suzuki / Timeline", "鈴木 大輝 / SOAP記録": "Daiki Suzuki / SOAP record",
+  "鈴木 大輝 / 測定記録": "Daiki Suzuki / Measurement", "鈴木 大輝 / 傷害記録": "Daiki Suzuki / Injury record",
+  "すずき だいき": "Daiki Suzuki", "生年月日": "Date of birth", "身長 / 体重": "Height / Weight", "所属チーム": "Team",
+  "トップチーム": "First team", "利き足": "Dominant foot", "右": "Right", "ステータス": "Status",
+  "最新のコンディション": "Latest condition", "良い": "Good", "疲労感": "Fatigue", "睡眠の質": "Sleep quality", "筋肉痛": "Soreness", "ストレス": "Stress",
+  "今週のアクティビティ": "This week's activity", "3回": "3", "2回": "2", "5回": "5", "1件": "1", "トレーニング": "Training",
+  "傷害の記録": "Injury records", "直近の傷害": "Latest injury", "右足関節捻挫": "Right ankle sprain", "受傷日 2026/07/10": "Injured on 2026/07/10",
+  "すべて": "All", "2026年8月": "August 2026", "2026年7月": "July 2026",
+  "Subjective（主観的情報）": "Subjective", "Objective（客観的情報）": "Objective", "Assessment（評価）": "Assessment", "Plan（計画）": "Plan",
+  "右膝に違和感あり。走るときに軽い痛みを感じる。特に方向転換時に違和感が強い。": "Discomfort in the right knee. Mild pain when running, more pronounced during change of direction.",
+  "右膝外側に圧痛あり。可動域：正常。MMT：5/5。腫脹：軽度。": "Tenderness on the lateral right knee. ROM normal. MMT 5/5. Mild swelling.",
+  "右膝外側のオーバーユースによる炎症の可能性。靱帯損傷の可能性は低い。": "Likely overuse inflammation of the lateral right knee. Ligament injury unlikely.",
+  "アイシング、ストレッチ、負荷調整。明日再評価。": "Icing, stretching, load adjustment. Reassess tomorrow.",
+  "記録日": "Date", "記録者": "Recorded by", "山田 太郎（AT）": "Taro Yamada (AT)", "カテゴリ": "Category", "トレーニング後": "Post-training",
+  "タグ": "Tags", "右膝": "Right knee", "違和感": "Discomfort", "+ タグを追加": "+ Add tag",
+  "この記録は自動的に連携されます": "This record is linked automatically",
+  "選手プロフィール / タイムライン / 傷害「右足関節捻挫」の経過に紐づきます。": "It attaches to the athlete profile, the timeline, and the \"Right ankle sprain\" injury history.",
+  "キャンセル": "Cancel", "保存": "Save",
+  "体組成 ・ 前回比": "Body composition · vs. last", "項目": "Item", "測定値": "Value", "前回比": "vs. last",
+  "体重": "Weight", "体脂肪率": "Body fat", "筋肉量": "Muscle mass", "体水分率": "Body water",
+  "膝屈曲 ROM": "Knee flexion ROM", "等尺性筋力（健側比）": "Isometric strength (LSI)",
+  "膝関節屈曲 ROM 推移": "Knee flexion ROM trend", "測定メモ": "Measurement notes", "PDF出力": "Export PDF", "Excel出力": "Export Excel",
+  "コンディション良好。筋肉量が増加傾向。健側比 92%、次回で復帰判定の再評価を実施予定。": "Condition good. Muscle mass trending up. LSI at 92%; return-to-play reassessment scheduled next session.",
+  "SOAPへ自動反映：": "Auto-filled into SOAP: ",
+  "膝屈曲ROM +6°、健側比 92% がSOAPの「A（評価）」に追記されます。": "Knee flexion ROM +6° and LSI 92% are appended to the Assessment section of the SOAP note.",
+  "受傷日": "Injury date", "受傷状況": "Mechanism", "トレーニング中の着地時に内反": "Inversion on landing during training",
+  "重症度": "Severity", "部位": "Body region", "右足関節（外側）": "Right ankle (lateral)", "ICD-10コード": "ICD-10", "担当者": "Clinician",
+  "RTP予定": "Planned RTP", "経過": "Progress",
+  "受傷": "Injury", "初期評価": "Initial assessment", "リハビリ開始": "Rehab started", "ランニング開始": "Running started",
+  "競技復帰テスト（予定）": "Return-to-play testing (planned)",
+  "トレーニング中に受傷。腫脹・疼痛あり。": "Injured during training. Swelling and pain present.",
+  "荷重制限、可動域制限を確認。": "Weight-bearing and range-of-motion limitations confirmed.",
+  "可動域訓練・荷重訓練を開始。": "Started range-of-motion and weight-bearing exercises.",
+  "軽いジョギングから段階的に負荷を増加。": "Progressive loading, starting with light jogging.",
+  "方向転換動作を含む機能テストを実施予定。": "Functional testing including change-of-direction planned.",
+  "本日のセッション": "Today's sessions", "コンディションマトリクス（今週）": "Condition matrix (this week)",
+  "月": "Mon", "火": "Tue", "水": "Wed", "木": "Thu", "金": "Fri", "土": "Sat", "日": "Sun",
+  "すべての記録が、選手に紐づく": "Every record belongs to an athlete",
+  "SOAP・測定・傷害・リハビリは、独立したフォームではなく同じ選手レコードの一部として保存されます。": "SOAP notes, measurements, injuries and rehab aren't separate forms — they are parts of the same athlete record.",
+  "入力した数値が、そのまま評価になる": "Numbers you enter become the assessment",
+  "測定記録は自動でグラフ化され、その結果はSOAPの「A（評価）」へ自動反映。転記の手間なく、経過が評価につながります。": "Measurements are charted automatically and flow into the Assessment section of your SOAP note — no re-typing, no lost context.",
+  "共有パスワードで引き継げる": "Hand over with a shared password",
+  "チームごとの共有パスワードを渡すだけで、他のトレーナーと同じカルテを扱えます。担当が交代する日も情報が途切れません。": "Share a team password and another trainer works from the same charts. Nothing is lost when cover changes.",
+  "SOAP記録": "SOAP record", "コンディション記録": "Condition record", "トレーニング記録": "Training record", "傷害記録": "Injury record", "リハビリ記録": "Rehab record",
+  "トレーニング後の右膝の違和感について": "Right knee discomfort after training",
+  "体組成・ジャンプテスト・スプリント測定": "Body composition, jump and sprint measurements",
+  "コンディション：良い": "Condition: good", "フィジカルトレーニング": "Physical training",
+  "右足関節捻挫（受傷）": "Right ankle sprain (injury)", "受傷後の初期評価": "Initial assessment after injury",
+  "記録を、データへ。": "Turn records into data.", "データを、次の判断へ。": "Turn data into decisions.",
+  "受傷から復帰まで、現場で発生するすべての情報がひとつの流れとしてつながります。": "From injury to return, everything that happens in the field connects into one continuous flow.",
+  "それぞれの記録は、選手というひとつの軸の上に時系列で積み上がります。": "Every record stacks up chronologically along a single axis: the athlete. ",
+  "選手の過去を、未来につなげる。": "Connect an athlete's past to their future.",
+  "すべての起点となる選手レコード": "The athlete record everything starts from",
+  "起きたことを時系列で一本の線に": "Everything that happened, on one chronological line",
+  "現場での評価と処置の記録": "Field assessments and treatment notes",
+  "ROM・筋力・パフォーマンスの数値": "ROM, strength and performance numbers",
+  "受傷部位・診断・重症度の管理": "Body region, diagnosis and severity",
+  "段階的な復帰プログラムの経過": "Progress through a staged return program",
+  "復帰判断の根拠が記録として残る": "The reasoning behind the decision stays on record",
+  "記録アプリではなく、": "Not a note-taking app —", "データ基盤であること。": "a data foundation.",
+  "すべての情報が「選手」を中心に整理されます。部署でも書式でもなく、選手が主語です。": "Everything is organized around the athlete — not around departments or document formats.",
+  "高校から大学、プロへ。年をまたいでデータが蓄積され、キャリアを通じた記録になります。": "High school to university to professional. Data accumulates across years into a career-long record.",
+  "重要な情報は自由記述のまま埋もれず、検索・比較・集計できる構造化データになります。": "Key information doesn't stay buried in free text — it becomes structured data you can search, compare and aggregate.",
+  "SOAP・測定・傷害・タイムラインが相互に参照され、判断の根拠がひと目で追えます。": "SOAP notes, measurements, injuries and the timeline reference each other, so the reasoning is easy to follow.",
+  "担当するチームが増えても減っても、カルテはあなたのアカウントに残り続けます。": "Whether you take on more teams or fewer, the charts stay in your account.",
+  "アカウント種別ごとの権限とアクセス履歴により、医療情報として扱うべきデータを保護します。": "Per-role permissions and access history protect data that must be handled as medical information.",
+  "カルテはあなたのもの。": "The charts are yours.", "共有範囲は、あなたが決める。": "You decide who sees them.",
+  "Athlomedの管理者はメディカルスタッフです。アカウント種別ごとにできることを明確に分け、選手・スタッフ・他のトレーナーへ必要な範囲だけを開きます。": "In Athlomed the administrator is the medical staff member. Each account type has a clearly defined scope, so athletes, coaching staff and fellow trainers see only what they need to.",
+  "管理者": "Administrator", "メディカルスタッフ": "Medical staff",
+  "AT・PT・柔道整復師・スポーツドクターなど、現場で記録を書く人のためのアカウント。": "For ATs, PTs, judo therapists and sports physicians — the people writing the records.",
+  "カルテの作成・編集・閲覧（すべての権限）": "Create, edit and view charts (full permissions)",
+  "複数チームのカルテをチームごとに作成・管理": "Create and manage charts for multiple teams, team by team",
+  "記録テンプレートを自分で追加・編集": "Add and edit your own record templates",
+  "アカウント発行と共有範囲の設定": "Issue accounts and set sharing scope",
+  "入力＋閲覧": "Input + view", "選手アカウント": "Athlete account",
+  "選手本人が、毎日のコンディションを自分で入力するためのアカウント。": "For athletes to submit their own daily condition check.",
+  "日々のコンディションチェックの入力": "Daily condition check input", "自分の記録の閲覧": "View their own records",
+  "それ以外の項目は閲覧のみ（編集不可）": "Everything else is view-only (no editing)",
+  "他の選手の情報にはアクセス不可": "No access to other athletes' information",
+  "閲覧のみ": "View only", "スタッフアカウント": "Coaching staff account",
+  "監督・コーチなど、選手の状態を把握する必要があるチームスタッフ向け。": "For head coaches and coaching staff who need to know where athletes stand.",
+  "選手のコンディション・出場可否の閲覧": "View athlete condition and availability",
+  "チーム全体の状況の把握": "See the status of the whole squad",
+  "記録の入力・編集はできません": "Cannot create or edit records",
+  "公開範囲はメディカルスタッフが設定": "Visibility is set by the medical staff member",
+  "パスワードで、チームのカルテを他のトレーナーと共有": "Share a team's charts with another trainer via password",
+  "チームごとに発行される共有パスワードを渡すだけで、他のトレーナーが同じチームのカルテにアクセスできます。帯同が交代する日も、複数人で担当する現場も、情報が途切れません。共有はいつでも停止でき、アクセス履歴も残ります。": "Hand over the password issued for a team and another trainer can access the same charts. Whether cover rotates or several people share the role, information never breaks. Sharing can be revoked at any time, and access history is kept.",
+  "チーム共有パスワード": "Team sharing password", "コピー": "Copy",
+  "現在 2名のトレーナーが共有中 ・ 有効期限 30日": "Currently shared with 2 trainers · Valid for 30 days",
+  "料金プラン": "Pricing",
+  "Athlomedは、メディカルスタッフ個人がご契約いただくサービスです。チーム単位・組織単位の契約はありません。価格は1名あたりの月額です。": "Athlomed is licensed to individual medical staff — there are no team or organization contracts. Final pricing is being prepared.",
+  "まず1チームから試したい方へ": "For trying it with your first team", "/ 月": "/ month", "/ 月・1名": "/ month per person",
+  "チーム 1つ ・ 選手 5名まで": "1 team · up to 5 athletes",
+  "SOAP・測定・傷害・リハビリの記録": "SOAP, measurement, injury and rehab records",
+  "測定記録の自動グラフ化": "Automatic charts from measurements",
+  "選手アカウント（コンディション入力）": "Athlete accounts (condition input)",
+  "おすすめ": "Recommended", "複数チームを担当するメディカルスタッフへ": "For medical staff covering several teams",
+  "Freeのすべての機能": "Everything in Free", "チーム数・選手数 無制限": "Unlimited teams and athletes",
+  "記録テンプレートの追加・編集": "Add and edit record templates",
+  "測定結果のSOAP「A」への自動反映": "Measurements auto-filled into the SOAP Assessment",
+  "グラフ・結果表のPDF出力 / Excel出力": "Charts and result tables to PDF / Excel",
+  "パスワードによるカルテ共有": "Password-based chart sharing",
+  "スタッフアカウント（閲覧のみ）の発行": "Issue view-only coaching staff accounts",
+  "メールサポート": "Email support", "先行利用に申し込む": "Request early access",
+  "選手アカウント・スタッフアカウントの発行に追加費用はかかりません。": "Issuing athlete and coaching staff accounts costs nothing extra.",
+  "選手データを、次のステージへ。": "Take athlete data to the next stage.",
+  "まずは担当する1チームから。今ある記録を、これからのデータ基盤に変えていきましょう。": "Start with one team you cover. Turn the records you already keep into a foundation you can build on.",
+  "選手のすべてを、ひとつにつなぐ。": "Everything about an athlete, connected in one place.",
+  "スポーツ現場のためのアスリートデータプラットフォーム。": "An athlete data platform for the sports field.",
+  "アカウントと共有": "Accounts & sharing", "Athlomedについて": "About Athlomed",
+  "利用規約": "Terms", "プライバシーポリシー": "Privacy Policy", "セキュリティ": "Security"
+};
+
+class Component extends DCLogic {
+  state = { menuOpen: false, tab: "profile", lang: (typeof localStorage !== "undefined" && localStorage.getItem("athlome-lang")) || "ja" };
+
+  _isJP() {
+    if (this.__jp === undefined) {
+      let tz = "";
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+      const nl = (navigator.language || "").toLowerCase();
+      this.__jp = tz === "Asia/Tokyo" || nl === "ja" || nl.indexOf("ja-") === 0;
+    }
+    return this.__jp;
+  }
+
+  applyLang() {
+    const en = this.state.lang === "en";
+    document.documentElement.lang = en ? "en" : "ja";
+    document.title = en
+      ? "Athlomed | Everything about an athlete, connected. Sports data management for medical staff"
+      : "Athlomed | 選手のすべてを、ひとつにつなぐ。スポーツ現場のデータ管理SaaS";
+    if (!this._orig) this._orig = new WeakMap();
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach((n) => {
+      const cur = n.nodeValue;
+      if (!cur || !cur.trim()) return;
+      let rec = this._orig.get(n);
+      // If the node's text changed by something other than us (React re-render), re-seed the source.
+      if (!rec || cur !== rec.applied) rec = { source: cur, applied: cur };
+      const key = rec.source.trim();
+      let next = rec.source;
+      if (en) {
+        const t = DICT[key];
+        if (t) next = rec.source.replace(key, t);
+      }
+      if (n.nodeValue !== next) n.nodeValue = next;
+      rec.applied = next;
+      this._orig.set(n, rec);
+    });
+  }
+
+  componentDidUpdate() { this.applyLang(); }
+
+  componentDidMount() {
+    this.applyLang();
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    document.querySelectorAll("[data-reveal]").forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 70 + "ms";
+      io.observe(el);
+    });
+    this._io = io;
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+
+  renderVals() {
+    const tab = this.state.tab;
+    const defs = [
+      ["dashboard", "ダッシュボード", "ダッシュボード"],
+      ["profile", "選手プロフィール", "鈴木 大輝"],
+      ["timeline", "タイムライン", "鈴木 大輝 / タイムライン"],
+      ["soap", "SOAP", "鈴木 大輝 / SOAP記録"],
+      ["measure", "測定", "鈴木 大輝 / 測定記録"],
+      ["injury", "傷害", "鈴木 大輝 / 傷害記録"]
+    ];
+    const tabs = defs.map(([id, label]) => ({
+      label, active: tab === id,
+      onClick: () => this.setState({ tab: id }),
+      style: "cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:all .18s ease;" +
+        (tab === id
+          ? "background:#0F172A;color:#fff;border:1px solid #0F172A"
+          : "background:#fff;color:#334155;border:1px solid #E2EBF6")
+    }));
+
+    const navMap = { dashboard: "ダッシュボード", profile: "選手", timeline: "選手", soap: "SOAP", measure: "測定", injury: "傷害" };
+    const active = navMap[tab];
+    const navItems = ["ダッシュボード", "選手", "チーム", "スケジュール", "SOAP", "測定", "傷害", "リハビリ", "コンディション", "レポート", "設定"].map((label) => ({
+      label,
+      style: "display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;font-size:12.5px;transition:background .2s ease;" +
+        (label === active ? "background:#2563EB;color:#fff;font-weight:500" : "color:#94A3B8")
+    }));
+
+    const tagColors = {
+      SOAP: ["#2563EB", "#EFF6FF"], 測定: ["#0E7490", "#ECFEFF"], 傷害: ["#991B1B", "#FEE2E2"],
+      リハビリ: ["#4338CA", "#EEF2FF"], コンディション: ["#166534", "#DCFCE7"], トレーニング: ["#92400E", "#FEF9C3"]
+    };
+    const tl = [
+      ["8/08", "SOAP", "SOAP記録", "トレーニング後の右膝の違和感について"],
+      ["8/07", "測定", "測定記録", "体組成・ジャンプテスト・スプリント測定"],
+      ["8/06", "コンディション", "コンディション記録", "コンディション：良い"],
+      ["8/04", "トレーニング", "トレーニング記録", "フィジカルトレーニング"],
+      ["7/10", "傷害", "傷害記録", "右足関節捻挫（受傷）"],
+      ["7/11", "SOAP", "SOAP記録", "受傷後の初期評価"],
+      ["7/15", "リハビリ", "リハビリ記録", "リハビリ開始"]
+    ];
+    const timeline = tl.map(([date, tag, title, desc]) => {
+      const [fg, bg] = tagColors[tag];
+      return {
+        date, tag, title, desc,
+        dotStyle: "position:absolute;top:18px;left:-4px;width:9px;height:9px;border-radius:50%;background:" + fg + ";box-shadow:0 0 0 3px #F7FAFE;display:block",
+        tagStyle: "flex:none;font-size:10px;font-weight:700;color:" + fg + ";background:" + bg + ";border-radius:5px;padding:4px 8px"
+      };
+    });
+
+    const md = [
+      ["体重", "72.4 kg", "-0.3 kg", "down"], ["体脂肪率", "12.3 %", "-0.5 %", "down"],
+      ["筋肉量", "58.6 kg", "+0.6 kg", "up"], ["体水分率", "60.2 %", "+0.8 %", "up"],
+      ["膝屈曲 ROM", "138 °", "+6 °", "up"], ["等尺性筋力（健側比）", "92 %", "+4 %", "up"]
+    ];
+    const measures = md.map(([name, value, delta, dir]) => ({
+      name, value, delta,
+      deltaStyle: "width:70px;text-align:right;font-family:'Roboto Mono',monospace;color:" + (dir === "up" ? "#166534" : "#0EA5E9")
+    }));
+
+    const bd = [["6/20", 96], ["6/27", 104], ["7/04", 112], ["7/11", 118], ["7/18", 126], ["7/25", 132], ["8/01", 138]];
+    const bars = bd.map(([label, value], i) => ({
+      label, value,
+      barStyle: "width:100%;max-width:26px;border-radius:4px 4px 0 0;display:block;height:" + Math.round((value / 145) * 100) + "%;background:" +
+        (i === bd.length - 1 ? "#2563EB" : "#BFDBFE")
+    }));
+
+    const pg = [
+      ["7/10", "受傷", "トレーニング中に受傷。腫脹・疼痛あり。", "#991B1B"],
+      ["7/11", "初期評価", "荷重制限、可動域制限を確認。", "#2563EB"],
+      ["7/15", "リハビリ開始", "可動域訓練・荷重訓練を開始。", "#4338CA"],
+      ["8/01", "ランニング開始", "軽いジョギングから段階的に負荷を増加。", "#0EA5E9"],
+      ["8/15", "競技復帰テスト（予定）", "方向転換動作を含む機能テストを実施予定。", "#94A3B8"]
+    ];
+    const progress = pg.map(([date, title, desc, color]) => ({
+      date, title, desc,
+      dotStyle: "width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px;background:" + color + ";display:block"
+    }));
+
+    const chain = [
+      ["01", "Athlete", "すべての起点となる選手レコード"],
+      ["02", "Timeline", "起きたことを時系列で一本の線に"],
+      ["03", "SOAP", "現場での評価と処置の記録"],
+      ["04", "Measurement", "ROM・筋力・パフォーマンスの数値"],
+      ["05", "Injury", "受傷部位・診断・重症度の管理"],
+      ["06", "Rehabilitation", "段階的な復帰プログラムの経過"],
+      ["07", "Return to Play", "復帰判断の根拠が記録として残る"]
+    ].map(([no, title, desc]) => ({ no, title, desc }));
+
+    const weekDays = ["月", "火", "水", "木", "金", "土", "日"];
+    const cellStyle = (v) => {
+      const c = v >= 7 ? ["#FEE2E2", "#991B1B"] : v >= 4 ? ["#FEF9C3", "#92400E"] : ["#DCFCE7", "#166534"];
+      return "flex:1;text-align:center;font-family:'Roboto Mono',monospace;font-size:10.5px;padding:7px 0;border-radius:5px;background:" + c[0] + ";color:" + c[1];
+    };
+    const matrix = [
+      ["鈴木 大輝", [2, 3, 5, 7, 8, 6, 4]],
+      ["田中 翔太", [3, 4, 4, 6, 7, 5, 3]],
+      ["佐藤 陸", [1, 2, 3, 3, 5, 4, 2]],
+      ["髙橋 悠斗", [5, 6, 7, 8, 7, 6, 5]],
+      ["渡辺 海斗", [2, 2, 3, 4, 3, 2, 2]]
+    ].map(([name, vals]) => ({ name, cells: vals.map((v) => ({ v, style: cellStyle(v) })) }));
+
+    return {
+      menuOpen: this.state.menuOpen,
+      waitlistDone: !!this.state.waitlisted,
+      waitlistOpen: !this.state.waitlisted,
+      proPrice: this.state.lang === "en" ? (this._isJP() ? "$19.99" : "$29.99") : "¥3,200",
+      freePrice: this.state.lang === "en" ? "$0" : "¥0",
+      proPriceNote: this.state.lang === "en"
+        ? (this._isJP() ? "Price for access from Japan (tax incl.)" : "Price for access outside Japan (tax incl.)")
+        : "日本国内価格（税込）",
+      formAction: "https://formspree.io/f/" + (this.props.formspreeId ?? "mppaqeqw"),
+      submitLabel: this.state.sending
+        ? (this.state.lang === "en" ? "Sending…" : "送信中…")
+        : (this.state.lang === "en" ? "Join the waiting list" : "ウェイティングリストに登録"),
+      submitWaitlist: (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const id = this.props.formspreeId ?? "mppaqeqw";
+        if (this.state.sending) return;
+        if (!id) { this.setState({ waitlisted: true }); return; }
+        this.setState({ sending: true });
+        fetch("https://formspree.io/f/" + id, {
+          method: "POST", body: new FormData(form), headers: { Accept: "application/json" }
+        }).then(() => this.setState({ waitlisted: true, sending: false }))
+          .catch(() => this.setState({ waitlisted: true, sending: false }));
+      },
+      jaStyle: "color:" + (this.state.lang === "ja" ? "#2563EB" : "#94A3B8"),
+      enStyle: "color:" + (this.state.lang === "en" ? "#2563EB" : "#94A3B8"),
+      toggleLang: () => this.setState((s) => {
+        const lang = s.lang === "ja" ? "en" : "ja";
+        try { localStorage.setItem("athlome-lang", lang); } catch (e) {}
+        return { lang };
+      }),
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      tabs, navItems,
+      crumb: defs.find((d) => d[0] === tab)[2],
+      isDashboard: tab === "dashboard", isProfile: tab === "profile", isTimeline: tab === "timeline",
+      isSoap: tab === "soap", isMeasure: tab === "measure", isInjury: tab === "injury",
+      timeline, measures, bars, progress, chain, weekDays, matrix
+    };
+  }
+}
+</script>
+</body>
+</html>
