@@ -5,7 +5,9 @@
   var DICT = {
     "税込。トレーナーアカウント1つあたり": "Tax included. Per trainer account. Available in Japan only.",
     "課題": "Problem", "機能": "Product", "データ連携": "Data", "アカウント": "Accounts", "選ばれる理由": "Why Athlomed", "料金": "Pricing",
-    "ログイン": "Log in", "ウェイティングリスト": "Waiting list", "ウェイティングリストに登録": "Join the waiting list",
+    "ログイン": "Log in", "アプリを始める": "Start the app",
+    "選手・コーチのアカウントは無料 ・ メディカルは月額¥3,980（税込）": "Free for athletes and coaches · Medical accounts ¥3,980/month (tax included)",
+    "アカウントを作成して、今日から記録を始められます。": "Create an account and start recording today.",
     "提供準備中 ・ ご登録は無料、順番にご案内します": "Launching soon · Free to join, invitations sent in order",
     "Athlomedは現在、提供準備中です。ウェイティングリストにご登録いただいた方から順に、ご案内をお送りします。": "Athlomed is preparing for launch. We invite people in the order they join the waiting list.",
     "メールアドレス": "Email address", "ご職種": "Your role", "担当しているチーム数": "Teams you cover",
