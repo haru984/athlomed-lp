@@ -153,7 +153,17 @@
     "グラフ・結果表のPDF出力 / Excel出力": "Charts and result tables to PDF / Excel",
     "パスワードによるカルテ共有": "Password-based chart sharing",
     "スタッフアカウント（閲覧のみ）の発行": "Issue view-only coaching staff accounts",
-    "メールサポート": "Email support", "先行利用に申し込む": "Request early access",
+    "メールサポート": "Email support",
+    "選手・コーチ": "Athletes & coaches", "メディカル": "Medical", "メディカルと連携して記録・閲覧する方へ": "For recording and viewing together with your medical staff",
+    "選手：コンディション記録": "Athletes: daily condition log", "選手：練習・試合チェック、筋トレ・リハビリ記録": "Athletes: practice/match checks, strength & rehab logs",
+    "選手：自分の記録・測定結果のグラフ": "Athletes: charts of own records and measurements", "選手：メディカルとの連携と開示範囲の設定": "Athletes: connect with medical staff and choose what to share",
+    "コーチ：選手の状態・測定結果の閲覧": "Coaches: view athlete status and measurements", "コーチ：練習・試合のセッションの作成・編集": "Coaches: create and edit practice/match sessions",
+    "トレーナー・理学療法士などのメディカルスタッフへ": "For trainers, physiotherapists and other medical staff",
+    "SOAPカルテ（救急対応の記録を含む）": "SOAP notes (including emergency response records)", "傷病ボードと合流可能範囲の管理": "Injury board and return-to-participation limits",
+    "測定の入力と推移のグラフ": "Measurement entry and trend charts", "セッション・RPE・ACWRによる負荷管理": "Load management with sessions, RPE and ACWR",
+    "カルテ・測定のテンプレート": "Templates for notes and measurements", "コーチ・スタッフの招待": "Invite coaches and staff",
+    "データの書き出し ・ メールサポート": "Data export · Email support", "無料体験期間なし": "No free trial",
+    "有料のご契約は、メディカルスタッフ個人のみです。チーム単位・組織単位の契約はありません。選手・コーチのアカウントは無料でご利用いただけます。": "Only individual medical staff pay. There are no team or organisation contracts. Athlete and coach accounts are free.", "先行利用に申し込む": "Request early access",
     "選手データを、次のステージへ。": "Take athlete data to the next stage.",
     "まずは担当する1チームから。今ある記録を、これからのデータ基盤に変えていきましょう。": "Start with one team you cover. Turn the records you already keep into a foundation you can build on.",
     "選手のすべてを、ひとつにつなぐ。": "Everything about an athlete, connected in one place.",
@@ -290,7 +300,7 @@
   });
   applyLang();
 
-  /* ---------- pricing (Free ¥0 / Pro ¥3,980 税込) ----------
+  /* ---------- pricing (選手・コーチ ¥0 / メディカル ¥3,980 税込) ----------
      現段階は日本国内のみでの提供のため、通貨はJPYに統一する。
      海外価格は提供していないので、英語表示でも金額は円のまま出す。 */
   function updatePricing() {
