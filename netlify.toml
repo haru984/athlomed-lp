@@ -61,20 +61,30 @@
   to = "/contact.html"
   status = 200
 
-[[redirects]]
-  from = "/checkout/confirm"
-  to = "/checkout/confirm.html"
-  status = 200
-
+# ---- 旧版（v1）の文書と申し込み画面の見本は削除済み。現行版へ301 ----
 [[redirects]]
   from = "/legal/terms"
-  to = "/legal/terms.html"
-  status = 200
+  to = "/legal/v2/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/terms.html"
+  to = "/legal/v2/terms"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/legal/privacy"
-  to = "/legal/privacy.html"
-  status = 200
+  to = "/legal/v2/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/privacy.html"
+  to = "/legal/v2/privacy"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/legal/tokushoho"
@@ -88,29 +98,62 @@
 
 [[redirects]]
   from = "/legal/consent/athlete"
-  to = "/legal/consent/athlete.html"
-  status = 200
+  to = "/legal/v2/athlete-consent"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/consent/athlete.html"
+  to = "/legal/v2/athlete-consent"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/legal/consent/guardian"
-  to = "/legal/consent/guardian.html"
-  status = 200
+  to = "/legal/v2/guardian-consent"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/consent/guardian.html"
+  to = "/legal/v2/guardian-consent"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/legal/consent/medical"
-  to = "/legal/consent/medical.html"
-  status = 200
+  to = "/legal/v2/third-party-consent"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/consent/medical.html"
+  to = "/legal/v2/third-party-consent"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout"
+  to = "/#pricing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout.html"
+  to = "/#pricing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout/*"
+  to = "/#pricing"
+  status = 301
+  force = true
 
 # ---- .html 付きURLはクリーンURLへ301（重複コンテンツ回避）----
 [[redirects]]
   from = "/contact.html"
   to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/checkout/confirm.html"
-  to = "/checkout/confirm"
   status = 301
   force = true
 
